@@ -46,9 +46,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:
-
-      Lottie.asset(
+      body:Lottie.asset(
         'assets/splash_lottie.json',
         controller: _controller,
         height: MediaQuery.of(context).size.height * 1,
