@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-import 'home.dart';
+import 'home/view.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({Key? key}) : super(key: key);
 
   @override
-  _RootPageState createState() => _RootPageState();
+  State<RootPage>  createState() => _RootPageState();
 }
 
 class _RootPageState extends State<RootPage> {
   int _selectedIndex = 0; // 用作被选中的 Tab 的索引号
   final List _tabPages = [
-    const Home(),
-    const Home(),
-    const Home(),
-    const Home(),
+     HomePage(),
+     HomePage(),
+     HomePage(),
+     HomePage(),
   ];
 
   @override
