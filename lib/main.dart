@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
+import 'util/app_theme.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,11 +16,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
+
+        theme:  lightTheme,
+        darkTheme: darkTheme,
+        // theme:  ThemeData.light(),
+        // darkTheme: ThemeData.dark(),
+        themeMode: ThemeMode.light,
+
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellowAccent),
-        useMaterial3: true,
-      ),
+      // theme: ThemeData(
+      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellowAccent),
+      //   useMaterial3: true,
+      // ),
       home: const SplashScreen(),
     );
   }

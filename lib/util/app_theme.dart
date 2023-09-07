@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AppTheme {
   AppTheme._();
@@ -29,7 +30,8 @@ class AppTheme {
     caption: caption,
   );
 
-  static const TextStyle display1 = TextStyle( // h4 -> display1
+  static const TextStyle display1 = TextStyle(
+    // h4 -> display1
     fontFamily: fontName,
     fontWeight: FontWeight.bold,
     fontSize: 36,
@@ -38,7 +40,8 @@ class AppTheme {
     color: darkerText,
   );
 
-  static const TextStyle headline = TextStyle( // h5 -> headline
+  static const TextStyle headline = TextStyle(
+    // h5 -> headline
     fontFamily: fontName,
     fontWeight: FontWeight.bold,
     fontSize: 24,
@@ -46,7 +49,8 @@ class AppTheme {
     color: darkerText,
   );
 
-  static const TextStyle title = TextStyle( // h6 -> title
+  static const TextStyle title = TextStyle(
+    // h6 -> title
     fontFamily: fontName,
     fontWeight: FontWeight.bold,
     fontSize: 16,
@@ -54,7 +58,8 @@ class AppTheme {
     color: darkerText,
   );
 
-  static const TextStyle subtitle = TextStyle( // subtitle2 -> subtitle
+  static const TextStyle subtitle = TextStyle(
+    // subtitle2 -> subtitle
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
     fontSize: 14,
@@ -62,7 +67,8 @@ class AppTheme {
     color: darkText,
   );
 
-  static const TextStyle body2 = TextStyle( // body1 -> body2
+  static const TextStyle body2 = TextStyle(
+    // body1 -> body2
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
     fontSize: 14,
@@ -70,7 +76,8 @@ class AppTheme {
     color: darkText,
   );
 
-  static const TextStyle body1 = TextStyle( // body2 -> body1
+  static const TextStyle body1 = TextStyle(
+    // body2 -> body1
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
     fontSize: 16,
@@ -78,12 +85,48 @@ class AppTheme {
     color: darkText,
   );
 
-  static const TextStyle caption = TextStyle( // Caption -> caption
+  static const TextStyle caption = TextStyle(
+    // Caption -> caption
     fontFamily: fontName,
     fontWeight: FontWeight.w400,
     fontSize: 12,
     letterSpacing: 0.2,
     color: lightText, // was lightText
   );
-
 }
+
+///白天模式
+ThemeData lightTheme = ThemeData.light().copyWith(
+  useMaterial3: true,
+  primaryColor: Colors.blue,
+  splashColor: Colors.white12,
+  appBarTheme: AppBarTheme(
+    systemOverlayStyle: SystemUiOverlayStyle.dark,
+    elevation: 0,
+    backgroundColor: ThemeData.light().scaffoldBackgroundColor,
+    iconTheme: const IconThemeData(color: Colors.black),
+  ),
+  scaffoldBackgroundColor: ThemeData.light().scaffoldBackgroundColor,
+  iconTheme: const IconThemeData(
+    color: Colors.red,
+  ),
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      selectedItemColor: Colors.blue, unselectedItemColor: Colors.tealAccent),
+);
+
+///夜间模式
+ThemeData darkTheme = ThemeData.dark().copyWith(
+  useMaterial3: true,
+  appBarTheme: AppBarTheme(
+    systemOverlayStyle: SystemUiOverlayStyle.light,
+    elevation: 0,
+    backgroundColor: ThemeData.dark().scaffoldBackgroundColor,
+    iconTheme: const IconThemeData(color: Colors.white),
+  ),
+  scaffoldBackgroundColor: ThemeData.dark().scaffoldBackgroundColor,
+  iconTheme: const IconThemeData(
+    color: Colors.blue,
+  ),
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      selectedItemColor: Colors.tealAccent, unselectedItemColor: Colors.blue),
+);

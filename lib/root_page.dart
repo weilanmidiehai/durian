@@ -33,9 +33,9 @@ class _RootPageState extends State<RootPage> {
         // 未被选中时是否显示Label
         enableFeedback: true,
         //点击会产生咔嗒声，长按会产生短暂的振动
-        selectedItemColor: Colors.orange,
-        // 设置被选中时的图标颜色
-        unselectedItemColor: Colors.grey,
+        // selectedItemColor: Colors.orange,
+        // // 设置被选中时的图标颜色
+        // unselectedItemColor: Colors.grey,
         // 设置未被选中时的图标颜色
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -59,16 +59,11 @@ class _RootPageState extends State<RootPage> {
           ),
         ],
 
-        // 设置当前（即被选中时）页面
         currentIndex: _selectedIndex,
 
-        // 当点击其中一个[items]被触发
         onTap: (int index) {
           setState(() {
-            /*
-             * item 被点中时更改当前索引。
-             * 其中，currentIndex 字段设置的值时响应式的
-             */
+
             _selectedIndex = index;
           });
         },
