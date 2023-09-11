@@ -1,4 +1,5 @@
 import 'package:durian/root_page.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -16,18 +17,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
-
-        theme:  lightTheme,
-        darkTheme: darkTheme,
-        // theme:  ThemeData.light(),
-        // darkTheme: ThemeData.dark(),
-        themeMode: ThemeMode.light,
-
+      theme: greenTheme,
+      darkTheme: darkGreenTheme,
+      themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      // theme: ThemeData(
-      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellowAccent),
-      //   useMaterial3: true,
-      // ),
       home: const SplashScreen(),
     );
   }

@@ -33,28 +33,27 @@ class _RootPageState extends State<RootPage> {
         // 未被选中时是否显示Label
         enableFeedback: true,
         //点击会产生咔嗒声，长按会产生短暂的振动
-        // selectedItemColor: Colors.orange,
-        // // 设置被选中时的图标颜色
-        // unselectedItemColor: Colors.grey,
+        selectedItemColor: const Color(0xff87ba87),
+        // 设置被选中时的图标颜色
+        unselectedItemColor:   Colors.grey,
         // 设置未被选中时的图标颜色
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              size: 24.0,
             ),
             label: '工作室',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.event_note, size: 24.0),
+            icon: Icon(Icons.event_note),
             label: '数据',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_box_outlined, size: 24.0),
+            icon: Icon(Icons.account_box_outlined),
             label: '通讯录',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person, size: 24.0),
+            icon: Icon(Icons.person),
             label: '我的',
           ),
         ],

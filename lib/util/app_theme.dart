@@ -1,3 +1,4 @@
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -9,7 +10,6 @@ class AppTheme {
   static const Color white = Color(0xFFFFFFFF);
   static const Color nearlyBlack = Color(0xFF332E21);
   static const Color grey = Color(0xFF3A5160);
-  static const Color dark_grey = Color(0xFF313A44);
 
   static const Color darkText = Color(0xFF253840);
   static const Color darkerText = Color(0xFF17262A);
@@ -19,16 +19,6 @@ class AppTheme {
   static const Color chipBackground = Color(0xFFEEF1F3);
   static const Color spacer = Color(0xFFF2F2F2);
   static const String fontName = 'WorkSans';
-
-  static const TextTheme textTheme = TextTheme(
-    headline4: display1,
-    headline5: headline,
-    headline6: title,
-    subtitle2: subtitle,
-    bodyText2: body2,
-    bodyText1: body1,
-    caption: caption,
-  );
 
   static const TextStyle display1 = TextStyle(
     // h4 -> display1
@@ -95,38 +85,12 @@ class AppTheme {
   );
 }
 
-///白天模式
-ThemeData lightTheme = ThemeData.light().copyWith(
+ThemeData greenTheme = FlexThemeData.light(
+  scheme: FlexScheme.green,
   useMaterial3: true,
-  primaryColor: Colors.blue,
-  splashColor: Colors.white12,
-  appBarTheme: AppBarTheme(
-    systemOverlayStyle: SystemUiOverlayStyle.dark,
-    elevation: 0,
-    backgroundColor: ThemeData.light().scaffoldBackgroundColor,
-    iconTheme: const IconThemeData(color: Colors.black),
-  ),
-  scaffoldBackgroundColor: ThemeData.light().scaffoldBackgroundColor,
-  iconTheme: const IconThemeData(
-    color: Colors.red,
-  ),
-  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      selectedItemColor: Colors.blue, unselectedItemColor: Colors.tealAccent),
 );
 
-///夜间模式
-ThemeData darkTheme = ThemeData.dark().copyWith(
+ThemeData darkGreenTheme = FlexThemeData.dark(
+  scheme: FlexScheme.green,
   useMaterial3: true,
-  appBarTheme: AppBarTheme(
-    systemOverlayStyle: SystemUiOverlayStyle.light,
-    elevation: 0,
-    backgroundColor: ThemeData.dark().scaffoldBackgroundColor,
-    iconTheme: const IconThemeData(color: Colors.white),
-  ),
-  scaffoldBackgroundColor: ThemeData.dark().scaffoldBackgroundColor,
-  iconTheme: const IconThemeData(
-    color: Colors.blue,
-  ),
-  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      selectedItemColor: Colors.tealAccent, unselectedItemColor: Colors.blue),
 );

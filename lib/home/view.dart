@@ -23,8 +23,8 @@ class HomePage extends StatelessWidget {
           ElevatedButton(
               onPressed: () {
                 Get.isDarkMode
-                    ? Get.changeTheme(lightTheme)
-                    : Get.changeTheme(darkTheme);
+                    ? Get.changeTheme(greenTheme)
+                    : Get.changeTheme(darkGreenTheme);
               },
               child: const Text('变换主题'))
         ],
