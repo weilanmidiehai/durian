@@ -2,22 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeLogic extends GetxController {
-
   int selectedIndex = 0;
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  //多样的列表
+  RxBool multiple = RxBool(true);
   static const List<Widget> widgetOptions = <Widget>[
     Text(
-      'Index 0: Home',
-      style: optionStyle,
+      '抽屉选中的：Index 0: Home',
     ),
     Text(
-      'Index 1: Business',
-      style: optionStyle,
+      '抽屉选中的：Index 1: Business',
     ),
     Text(
-      'Index 2: School',
-      style: optionStyle,
+      '抽屉选中的：Index 2: School',
     ),
   ];
 
@@ -25,6 +21,12 @@ class HomeLogic extends GetxController {
     selectedIndex = index;
     update();
   }
+
+  void aaa() {
+    multiple.value = !multiple.value;
+    update();
+  }
+
   @override
   void onReady() {
     // TODO: implement onReady

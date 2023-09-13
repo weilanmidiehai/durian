@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../util/app_theme.dart';
 import 'logic.dart';
+import 'widget/home_drawer.dart';
+import '../module/home_list.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -19,63 +20,95 @@ class HomePage extends StatelessWidget {
               title: const Text(
                 'Du',
               ),
-            ),
-            drawer: Drawer(
-              child: ListView(
-                padding: EdgeInsets.zero,
-                children: [
-                  DrawerHeader(
-                    child: Center(
-                      child: ClipOval(
-                        child: Image.network(
-                          "https://cdn.pixabay.com/photo/2023/08/18/15/02/dog-8198719_1280.jpg",
-                          width: 100,
-                          height: 100,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+              actions: [
+                InkWell(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Icon(
+                      logic.multiple.value
+                          ? Icons.dashboard
+                          : Icons.view_agenda,
                     ),
                   ),
-                  ListTile(
-                    title: const Text('Home'),
-                    selected: logic.selectedIndex == 0,
-                    onTap: () {
-                      // Update the state of the app
-                      logic.onItemTapped(0);
-                      // Then close the drawer
-                      Navigator.pop(context);
-                    },
-                  ),
-                  ListTile(
-                    title: Text(Get.isDarkMode ? '白天模式' : '夜晚模式'),
-                    selected: logic.selectedIndex == 1,
-                    onTap: () {
-                      Get.isDarkMode
-                          ? Get.changeTheme(greenTheme)
-                          : Get.changeTheme(darkGreenTheme);
-                      logic.onItemTapped(1);
-                      // Then close the drawer
-                      Navigator.pop(context);
-                    },
-                  ),
-                  ListTile(
-                    title: const Text('School'),
-                    selected: logic.selectedIndex == 2,
-                    onTap: () {
-                      logic.onItemTapped(2);
-                      Navigator.pop(context);
-                    },
-                  ),
-                ],
-              ),
+                  onTap: () {
+                    logic.aaa();
+                  },
+                )
+              ],
             ),
+            drawer: HomeDrawer(logic: logic),
             body: Column(
               children: [
-                const Text('data'),
                 HomeLogic.widgetOptions[logic.selectedIndex],
+                Expanded(
+                  child: GridView(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: logic.multiple.value ? 4 : 2,
+                        //横轴三个子widget
+                        childAspectRatio: 1.0, //宽高比为1时，子widget
+                        mainAxisSpacing: 10, //主轴空隙间距
+                        crossAxisSpacing: 10 //次轴空隙间距
+                        ),
+                    children: List.generate(
+                      HomeList.homeList.length,
+                      (int index) {
+                        final item = HomeList.homeList[index];
+                        return HomeListView(
+                          listData: item,
+                          callBack: () {
+                            Navigator.push<dynamic>(
+                              context,
+                              MaterialPageRoute<dynamic>(
+                                builder: (BuildContext context) =>
+                                    item.navigateScreen!,
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                )
               ],
             ),
           );
         });
+  }
+}
+
+class HomeListView extends StatelessWidget {
+  const HomeListView({
+    Key? key,
+    this.listData,
+    this.callBack,
+  }) : super(key: key);
+
+  final HomeList? listData;
+  final VoidCallback? callBack;
+
+  @override
+  Widget build(BuildContext context) {
+    return AspectRatio(
+      aspectRatio: 1,
+      child: ClipRRect(
+        borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+        child: InkWell(
+          onTap: callBack,
+          child: Container(
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  listData!.imagePath,
+                ),
+                fit: BoxFit.fill, // 完全填充
+              ),
+            ),
+            child: Text('${listData?.title}'),
+          ),
+        ),
+      ),
+    );
   }
 }

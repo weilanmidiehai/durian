@@ -1,9 +1,8 @@
-import 'package:durian/root_page.dart';
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
+import 'root_page.dart';
 import 'util/app_theme.dart';
 
 void main() {

@@ -6,16 +6,16 @@ class RootPage extends StatefulWidget {
   const RootPage({Key? key}) : super(key: key);
 
   @override
-  State<RootPage>  createState() => _RootPageState();
+  State<RootPage> createState() => _RootPageState();
 }
 
 class _RootPageState extends State<RootPage> {
   int _selectedIndex = 0; // 用作被选中的 Tab 的索引号
   final List _tabPages = [
-     HomePage(),
-     HomePage(),
-     HomePage(),
-     HomePage(),
+    HomePage(),
+    HomePage(),
+    HomePage(),
+    HomePage(),
   ];
 
   @override
@@ -35,7 +35,7 @@ class _RootPageState extends State<RootPage> {
         //点击会产生咔嗒声，长按会产生短暂的振动
         selectedItemColor: const Color(0xff87ba87),
         // 设置被选中时的图标颜色
-        unselectedItemColor:   Colors.grey,
+        unselectedItemColor: Colors.grey,
         // 设置未被选中时的图标颜色
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -62,7 +62,6 @@ class _RootPageState extends State<RootPage> {
 
         onTap: (int index) {
           setState(() {
-
             _selectedIndex = index;
           });
         },
