@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 
 import '../module/case_list.dart';
 
-
 class ListViewStyle extends StatelessWidget {
   const ListViewStyle({
     Key? key,
@@ -26,16 +25,16 @@ class ListViewStyle extends StatelessWidget {
             alignment: Alignment.center,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(
-                    context.isDarkMode
-                        ?'assets/bg/18.png'
-                        :'assets/bg/4.png'
-                  // listData!.imagePath,
-                ),
+                image: AssetImage(context.isDarkMode
+                    ? listData!.darkImagePath
+                    : listData!.imagePath),
                 fit: BoxFit.fill, // 完全填充
               ),
             ),
-            child: Text('${listData?.title}',textAlign: TextAlign.center,),
+            child: Text(
+              '${listData?.title}',
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),

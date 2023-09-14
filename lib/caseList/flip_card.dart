@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:durian/util/custom_scaffold.dart';
+import 'package:durian/widget/custom_scaffold.dart';
 import 'package:flutter/material.dart';
 
 class FlipCard extends StatefulWidget {

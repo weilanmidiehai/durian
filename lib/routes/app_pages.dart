@@ -13,13 +13,12 @@ class AppPages {
   static const initial = '/';
   static final routes = [
     GetPage(name: '/', page: () => const SplashScreen()),
-
     GetPage(name: '/FanChart', page: () => FanChart()),
     GetPage(name: '/PdfView', page: () => const PdfView()),
-    GetPage(name: '/GmailVerificationCode', page: () => const GmailVerificationCode()),
+    GetPage(
+        name: '/GmailVerificationCode',
+        page: () => const GmailVerificationCode()),
     GetPage(name: '/Img', page: () => const Img()),
-    GetPage(name: '/FlipCard', page: () =>  const FlipCard()),
-
-
+    GetPage(name: '/FlipCard', page: () => const FlipCard()),
   ];
 }

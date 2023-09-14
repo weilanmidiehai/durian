@@ -38,7 +38,7 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text(context.isDarkMode ? '夜晚模式' : '白天模式'),
+            title: Text(context.isDarkMode ? '切换白天模式' : '切换夜晚模式'),
             // Icon(Get.isDarkMode ? Icons.sunny :Icons.nightlight),
             selected: logic.selectedIndex == 1,
             onTap: () {

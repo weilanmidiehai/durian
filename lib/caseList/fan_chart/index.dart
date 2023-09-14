@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../util/custom_scaffold.dart';
+import '../../util/show_web.dart';
+import '../../widget/custom_scaffold.dart';
 import 'hr_controller.dart';
 import 'widget/custom_container.dart';
 import 'widget/pie_chart.dart';
@@ -13,7 +14,7 @@ class FanChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HRController>(
-      global: false,
+        global: false,
         init: controller,
         builder: (controller) {
           return CustomScaffold(
@@ -46,7 +47,18 @@ class FanChart extends StatelessWidget {
                     ],
                   ),
                 ),
-
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Get.to(const ShowWeb(
+                          url: 'https://app.flchart.dev/#/pie',
+                          title: '更多图形（插件范例网页）',
+                        ));
+                      },
+                      child: const Text('更多图形（插件范例网页')),
+                )
               ],
             ),
           );

@@ -12,7 +12,7 @@ class GmailVerificationCode extends StatelessWidget {
         title: const Text('GmailVerificationCode'),
       ),
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Column(
           children: [
             const TextField(
@@ -20,22 +20,22 @@ class GmailVerificationCode extends StatelessWidget {
               decoration: InputDecoration(
                   labelText: "发送邮箱",
                   hintText: "邮箱账号",
-                  prefixIcon: Icon(Icons.person)
-              ),),
+                  prefixIcon: Icon(Icons.person)),
+            ),
             const TextField(
               autofocus: true,
               decoration: InputDecoration(
                   labelText: "发送主题",
                   hintText: "主题",
-                  prefixIcon: Icon(Icons.person)
-              ),),
+                  prefixIcon: Icon(Icons.person)),
+            ),
             const TextField(
               autofocus: true,
               decoration: InputDecoration(
                   labelText: "发送内容",
                   hintText: "内容",
-                  prefixIcon: Icon(Icons.person)
-              ),),
+                  prefixIcon: Icon(Icons.person)),
+            ),
             Center(
               child: ElevatedButton(
                 onPressed: () async {

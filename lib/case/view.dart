@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../module/case_list.dart';
-import '../util/listview_style.dart';
+import '../widget/listview_style.dart';
 import 'logic.dart';
 import 'widget/home_drawer.dart';
 
@@ -40,7 +40,9 @@ class HomePage extends StatelessWidget {
             drawer: HomeDrawer(logic: logic),
             body: Column(
               children: [
-                HomeLogic.widgetOptions[logic.selectedIndex],
+                InkWell(
+                    onTap: () {},
+                    child: HomeLogic.widgetOptions[logic.selectedIndex]),
                 Expanded(
                   child: GridView(
                     padding: const EdgeInsets.symmetric(horizontal: 5),

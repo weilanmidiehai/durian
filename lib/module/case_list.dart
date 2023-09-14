@@ -1,22 +1,24 @@
 class HomeList {
   HomeList({
     this.navigateScreen,
-    // this.imagePath = 'assets/bg/4.png',
+    this.imagePath = 'assets/bg/4.png',
+    this.darkImagePath = 'assets/bg/18.png',
     this.title,
   });
 
   String? navigateScreen;
-  // String imagePath;
+  String imagePath;
+  String darkImagePath;
   String? title;
 
   static List<HomeList> homeList = [
     HomeList(
       navigateScreen: '/FanChart',
-      title: '饼图\n插件：fl_chart\n还有折线图、柱状图等',
+      title: '图形（饼图）\n插件：fl_chart',
     ),
     HomeList(
       navigateScreen: '/PdfView',
-      title: 'Pdf预览',
+      title: 'Pdf预览\n插件：flutter_pdfview',
     ),
     HomeList(
       navigateScreen: '/GmailVerificationCode',
