@@ -22,7 +22,7 @@ class HomeLogic extends GetxController {
     update();
   }
 
-  void aaa() {
+  void setMultiple() {
     multiple.value = !multiple.value;
     update();
   }

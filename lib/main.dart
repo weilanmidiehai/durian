@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 
-import 'root_page.dart';
+import 'routes/app_pages.dart';
 import 'util/app_theme.dart';
 
 void main() {
@@ -20,45 +19,9 @@ class MyApp extends StatelessWidget {
       darkTheme: darkGreenTheme,
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
-    );
-  }
-}
-
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
-
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen>
-    with TickerProviderStateMixin {
-  late AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      duration: const Duration(seconds: (3)),
-      vsync: this,
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Lottie.asset(
-        'assets/splash_lottie.json',
-        controller: _controller,
-        height: MediaQuery.of(context).size.height * 1,
-        animate: true,
-        onLoaded: (composition) {
-          _controller
-            ..duration = composition.duration
-            ..forward().whenComplete(() => Get.off(const RootPage()));
-        },
-      ),
+      // home:  const SplashScreen(),
+      initialRoute: AppPages.initial,
+      getPages: AppPages.routes,
     );
   }
 }

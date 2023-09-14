@@ -6,6 +6,7 @@ import '../logic.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({super.key, required this.logic});
+
   final HomeLogic logic;
 
   @override
@@ -37,11 +38,11 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text(Get.isDarkMode ? '白天模式' : '夜晚模式'),
+            title: Text(context.isDarkMode ? '夜晚模式' : '白天模式'),
             // Icon(Get.isDarkMode ? Icons.sunny :Icons.nightlight),
             selected: logic.selectedIndex == 1,
             onTap: () {
-              Get.isDarkMode
+              context.isDarkMode
                   ? Get.changeTheme(greenTheme)
                   : Get.changeTheme(darkGreenTheme);
               logic.onItemTapped(1);

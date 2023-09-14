@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../module/case_list.dart';
+import '../util/listview_style.dart';
 import 'logic.dart';
 import 'widget/home_drawer.dart';
-import '../module/home_list.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -31,7 +32,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   onTap: () {
-                    logic.aaa();
+                    logic.setMultiple();
                   },
                 )
               ],
@@ -44,7 +45,7 @@ class HomePage extends StatelessWidget {
                   child: GridView(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: logic.multiple.value ? 4 : 2,
+                        crossAxisCount: logic.multiple.value ? 2 : 1,
                         //横轴三个子widget
                         childAspectRatio: 1.0, //宽高比为1时，子widget
                         mainAxisSpacing: 10, //主轴空隙间距
@@ -54,16 +55,10 @@ class HomePage extends StatelessWidget {
                       HomeList.homeList.length,
                       (int index) {
                         final item = HomeList.homeList[index];
-                        return HomeListView(
+                        return ListViewStyle(
                           listData: item,
                           callBack: () {
-                            Navigator.push<dynamic>(
-                              context,
-                              MaterialPageRoute<dynamic>(
-                                builder: (BuildContext context) =>
-                                    item.navigateScreen!,
-                              ),
-                            );
+                            Get.toNamed('${item.navigateScreen}');
                           },
                         );
                       },
@@ -74,41 +69,5 @@ class HomePage extends StatelessWidget {
             ),
           );
         });
-  }
-}
-
-class HomeListView extends StatelessWidget {
-  const HomeListView({
-    Key? key,
-    this.listData,
-    this.callBack,
-  }) : super(key: key);
-
-  final HomeList? listData;
-  final VoidCallback? callBack;
-
-  @override
-  Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1,
-      child: ClipRRect(
-        borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-        child: InkWell(
-          onTap: callBack,
-          child: Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  listData!.imagePath,
-                ),
-                fit: BoxFit.fill, // 完全填充
-              ),
-            ),
-            child: Text('${listData?.title}'),
-          ),
-        ),
-      ),
-    );
   }
 }

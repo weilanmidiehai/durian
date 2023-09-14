@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../widget/custom_scaffold.dart';
+import '../../util/custom_scaffold.dart';
 import 'hr_controller.dart';
 import 'widget/custom_container.dart';
 import 'widget/pie_chart.dart';
 
-class HRIndex extends StatelessWidget {
-  HRIndex({Key? key}) : super(key: key);
+class FanChart extends StatelessWidget {
+  FanChart({Key? key}) : super(key: key);
   final HRController controller = Get.put(HRController());
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HRController>(
+      global: false,
         init: controller,
         builder: (controller) {
           return CustomScaffold(
@@ -45,6 +46,7 @@ class HRIndex extends StatelessWidget {
                     ],
                   ),
                 ),
+
               ],
             ),
           );

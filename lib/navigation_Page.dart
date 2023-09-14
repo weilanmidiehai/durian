@@ -1,15 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
-import 'home/view.dart';
+import 'case/view.dart';
 
-class RootPage extends StatefulWidget {
-  const RootPage({Key? key}) : super(key: key);
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  State<RootPage> createState() => _RootPageState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _RootPageState extends State<RootPage> {
+class _SplashScreenState extends State<SplashScreen>
+    with TickerProviderStateMixin {
+  late AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: (3)),
+      vsync: this,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Lottie.asset(
+        'assets/splash_lottie.json',
+        controller: _controller,
+        height: MediaQuery.of(context).size.height * 1,
+        animate: true,
+        onLoaded: (composition) {
+          _controller
+            ..duration = composition.duration
+            ..forward().whenComplete(
+                () => Get.off(() => const BottomNavigationPage()));
+        },
+      ),
+    );
+  }
+}
+
+class BottomNavigationPage extends StatefulWidget {
+  const BottomNavigationPage({Key? key}) : super(key: key);
+
+  @override
+  State<BottomNavigationPage> createState() => _RootPageState();
+}
+
+class _RootPageState extends State<BottomNavigationPage> {
   int _selectedIndex = 0; // 用作被选中的 Tab 的索引号
   final List _tabPages = [
     HomePage(),
