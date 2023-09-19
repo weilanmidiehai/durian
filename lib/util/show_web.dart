@@ -1,18 +1,57 @@
 import 'package:durian/widget/custom_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class ShowWeb extends StatelessWidget {
+class ShowWeb extends StatefulWidget {
   const ShowWeb({super.key, required this.url, this.title});
 
   final String url;
   final String? title;
 
   @override
+  State<ShowWeb> createState() => _ShowWebState();
+}
+
+class _ShowWebState extends State<ShowWeb> {
+  WebViewController controller = WebViewController();
+  int load = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    setState(() {
+      controller = WebViewController()
+        ..setJavaScriptMode(JavaScriptMode.unrestricted)
+        ..setBackgroundColor(const Color(0x00000000))
+        ..setNavigationDelegate(
+          NavigationDelegate(
+            onProgress: (int progress) {
+              setState(() {
+                load = progress;
+              });
+            },
+            onPageStarted: (String url) {},
+            onPageFinished: (String url) {},
+            onWebResourceError: (WebResourceError error) {},
+            onNavigationRequest: (NavigationRequest request) {
+              // if (request.url.startsWith(widget.url)) {
+              //   return NavigationDecision.prevent;
+              // }
+              return NavigationDecision.navigate;
+            },
+          ),
+        )
+        ..loadRequest(Uri.parse(widget.url));
+    });
+
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      title: title ?? '外部链接',
+      title: widget.title ?? '外部链接',
       actions: [
         InkWell(
           child: const Padding(
@@ -22,34 +61,26 @@ class ShowWeb extends StatelessWidget {
             ),
           ),
           onTap: () {
-            Clipboard.setData(ClipboardData(text: url));
+            Clipboard.setData(ClipboardData(text: widget.url));
             // logic.setMultiple();
           },
         )
       ],
-      body: WebViewWidget(
-          controller: WebViewController()
-            ..setJavaScriptMode(JavaScriptMode.unrestricted)
-            // ..setBackgroundColor( Colors.greenAccent)
-            ..setNavigationDelegate(
-              NavigationDelegate(
-                onProgress: (int progress) {
-                  // Update loading bar.
-                  const CircularProgressIndicator();
-                  const Text('加载中');
-                },
-                onPageStarted: (String url) {},
-                onPageFinished: (String url) {},
-                onWebResourceError: (WebResourceError error) {},
-                onNavigationRequest: (NavigationRequest request) {
-                  if (request.url.startsWith('https://www.youtube.com/')) {
-                    return NavigationDecision.prevent;
-                  }
-                  return NavigationDecision.navigate;
-                },
+      body: load == 100
+          ? WebViewWidget(controller: controller)
+          :  Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const CircularProgressIndicator(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text('加载中 $load %')
+                ],
               ),
-            )
-            ..loadRequest(Uri.parse(url))),
+            ),
     );
   }
 }

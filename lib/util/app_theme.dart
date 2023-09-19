@@ -10,7 +10,7 @@ class AppTheme {
   static const Color nearlyBlack = Color(0xFF332E21);
   static const Color grey = Color(0xFF3A5160);
 
-  static const Color darkText = Color(0xFF253840);
+  static const Color darkText = Color(0xFF457b3b);
   static const Color darkerText = Color(0xFF17262A);
   static const Color lightText = Color(0xFF4A6572);
   static const Color deactivatedText = Color(0xFF767676);
@@ -44,7 +44,7 @@ class AppTheme {
     fontWeight: FontWeight.bold,
     fontSize: 16,
     letterSpacing: 0.18,
-    color: darkerText,
+    color: darkText,
   );
 
   static const TextStyle subtitle = TextStyle(
