@@ -21,19 +21,22 @@ class ListViewStyle extends StatelessWidget {
         borderRadius: const BorderRadius.all(Radius.circular(8.0)),
         child: InkWell(
           onTap: callBack,
-          child: Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(context.isDarkMode
-                    ? listData!.darkImagePath
-                    : listData!.imagePath),
-                fit: BoxFit.fill, // 完全填充
+          child: Card(
+            // color: Colors.pinkAccent,
+            // alignment: Alignment.center,
+            // decoration: BoxDecoration(
+            //   image: DecorationImage(
+            //     image: AssetImage(context.isDarkMode
+            //         ? listData!.darkImagePath
+            //         : listData!.imagePath),
+            //     fit: BoxFit.fill, // 完全填充
+            //   ),
+            // ),
+            child: Center(
+              child: Text(
+                '${listData?.title}',
+                textAlign: TextAlign.center,
               ),
-            ),
-            child: Text(
-              '${listData?.title}',
-              textAlign: TextAlign.center,
             ),
           ),
         ),

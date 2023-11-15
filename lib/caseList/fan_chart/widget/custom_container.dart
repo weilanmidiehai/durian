@@ -20,7 +20,7 @@ class CustomContainer extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       margin: const EdgeInsets.fromLTRB(20, 0, 20, 16),
       decoration: BoxDecoration(
-          color: Colors.white,
+          // color: Colors.white,
           border: Border.all(color: const Color(0xfff5e4d3), width: 2),
           borderRadius: const BorderRadius.all(Radius.circular(10))),
       child: Column(

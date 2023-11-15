@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../caseList/animations/index.dart';
 import '../caseList/fan_chart/index.dart';
 import '../caseList/flip_card.dart';
 import '../caseList/gmail_verification_code.dart';
@@ -20,5 +21,6 @@ class AppPages {
         page: () => const GmailVerificationCode()),
     GetPage(name: '/Img', page: () => const Img()),
     GetPage(name: '/FlipCard', page: () => const FlipCard()),
+    GetPage(name: '/TransitionsHomePage', page: () => const TransitionsHomePage()),
   ];
 }

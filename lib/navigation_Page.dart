@@ -83,7 +83,7 @@ class _RootPageState extends State<BottomNavigationPage> {
             icon: Icon(
               Icons.home,
             ),
-            label: '工作室',
+            label: '组件',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.event_note),

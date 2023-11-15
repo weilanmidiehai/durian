@@ -19,7 +19,7 @@ class HomeDrawer extends StatelessWidget {
             child: Center(
               child: ClipOval(
                 child: Image.asset(
-                  "assets/lily.jpg",
+                  "assets/logo.png",
                   width: 100,
                   height: 100,
                   fit: BoxFit.cover,

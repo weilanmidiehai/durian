@@ -39,7 +39,6 @@ class _CustomPieChartState extends State<CustomPieChart> {
               const Text(
                 '合计',
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.black54),
               ),
               Text(
                 widget.total.toStringAsFixed(2),

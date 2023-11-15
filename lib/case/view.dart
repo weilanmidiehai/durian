@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../caseList/show_webview.dart';
 import '../module/case_list.dart';
 import '../widget/listview_style.dart';
 import 'logic.dart';
@@ -41,15 +42,17 @@ class HomePage extends StatelessWidget {
             body: Column(
               children: [
                 InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to( const WebViewExample());
+                    },
                     child: HomeLogic.widgetOptions[logic.selectedIndex]),
                 Expanded(
                   child: GridView(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: logic.multiple.value ? 2 : 1,
+                        crossAxisCount: logic.multiple.value ? 2: 1,
                         //横轴三个子widget
-                        childAspectRatio: 1.0, //宽高比为1时，子widget
+                        childAspectRatio: 2.0, //宽高比为1时，子widget
                         mainAxisSpacing: 10, //主轴空隙间距
                         crossAxisSpacing: 10 //次轴空隙间距
                         ),

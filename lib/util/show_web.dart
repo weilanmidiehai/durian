@@ -1,15 +1,12 @@
 import 'package:durian/widget/custom_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class ShowWeb extends StatefulWidget {
   const ShowWeb({super.key, required this.url, this.title});
-
   final String url;
   final String? title;
-
   @override
   State<ShowWeb> createState() => _ShowWebState();
 }

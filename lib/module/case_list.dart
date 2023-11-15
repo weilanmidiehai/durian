@@ -32,5 +32,9 @@ class HomeList {
       navigateScreen: '/FlipCard',
       title: '翻转卡片',
     ),
+    HomeList(
+      navigateScreen: '/TransitionsHomePage',
+      title: '动画组件',
+    ),
   ];
 }
