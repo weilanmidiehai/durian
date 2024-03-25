@@ -1,13 +1,12 @@
 import 'package:get/get.dart';
-
-import '../caseList/animations/index.dart';
-import '../caseList/fan_chart/index.dart';
-import '../caseList/flip_card.dart';
-import '../caseList/gmail_verification_code.dart';
-import '../caseList/img.dart';
-import '../caseList/pdf/pdf_view.dart';
-import '../caseList/time_picker.dart';
 import '../navigation_Page.dart';
+import '../screen/caseList/animations/index.dart';
+import '../screen/caseList/fan_chart/index.dart';
+import '../screen/caseList/flip_card.dart';
+import '../screen/caseList/gmail_verification_code.dart';
+import '../screen/caseList/img.dart';
+import '../screen/caseList/pdf/pdf_view.dart';
+import '../screen/caseList/time_picker.dart';
 import '../screen/guide/guide_index.dart';
 
 class AppPages {
