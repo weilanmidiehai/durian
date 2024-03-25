@@ -36,5 +36,12 @@ class HomeList {
       navigateScreen: '/TransitionsHomePage',
       title: '动画组件',
     ),
+    HomeList(
+      navigateScreen: '/GuideIndex',
+      title: '新手引导',
+    ),HomeList(
+      navigateScreen: '/TimePicker',
+      title: '时间选择器',
+    ),
   ];
 }

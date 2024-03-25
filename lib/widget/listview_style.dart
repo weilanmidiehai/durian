@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 import '../module/case_list.dart';
 
 class ListViewStyle extends StatelessWidget {
@@ -22,6 +20,7 @@ class ListViewStyle extends StatelessWidget {
         child: InkWell(
           onTap: callBack,
           child: Card(
+            // Container時候的背景
             // color: Colors.pinkAccent,
             // alignment: Alignment.center,
             // decoration: BoxDecoration(
