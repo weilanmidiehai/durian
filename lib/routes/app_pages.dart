@@ -7,6 +7,7 @@ import '../screen/caseList/gmail_verification_code.dart';
 import '../screen/caseList/img.dart';
 import '../screen/caseList/pdf/pdf_view.dart';
 import '../screen/caseList/time_picker.dart';
+import '../screen/date_selection/index.dart';
 import '../screen/guide/guide_index.dart';
 
 class AppPages {
@@ -25,5 +26,6 @@ class AppPages {
     GetPage(name: '/TransitionsHomePage', page: () => const TransitionsHomePage()),
     GetPage(name: '/GuideIndex', page: () => const GuideIndex()),
     GetPage(name: '/TimePicker', page: () => const TimePicker()),
+    GetPage(name: '/DateSelection', page: () => const DateSelection()),
   ];
 }

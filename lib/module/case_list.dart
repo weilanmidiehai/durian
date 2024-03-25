@@ -42,6 +42,9 @@ class HomeList {
     ),HomeList(
       navigateScreen: '/TimePicker',
       title: '时间选择器',
+    ),HomeList(
+      navigateScreen: '/DateSelection',
+      title: '日期时间选择（弹窗）',
     ),
   ];
 }
