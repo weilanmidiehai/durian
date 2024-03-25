@@ -39,10 +39,12 @@ class HomeList {
     HomeList(
       navigateScreen: '/GuideIndex',
       title: '新手引导',
-    ),HomeList(
+    ),
+    HomeList(
       navigateScreen: '/TimePicker',
       title: '时间选择器',
-    ),HomeList(
+    ),
+    HomeList(
       navigateScreen: '/DateSelection',
       title: '日期时间选择（弹窗）',
     ),

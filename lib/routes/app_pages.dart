@@ -23,7 +23,8 @@ class AppPages {
         page: () => const GmailVerificationCode()),
     GetPage(name: '/Img', page: () => const Img()),
     GetPage(name: '/FlipCard', page: () => const FlipCard()),
-    GetPage(name: '/TransitionsHomePage', page: () => const TransitionsHomePage()),
+    GetPage(
+        name: '/TransitionsHomePage', page: () => const TransitionsHomePage()),
     GetPage(name: '/GuideIndex', page: () => const GuideIndex()),
     GetPage(name: '/TimePicker', page: () => const TimePicker()),
     GetPage(name: '/DateSelection', page: () => const DateSelection()),

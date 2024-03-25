@@ -33,14 +33,14 @@ class TimeData {
 
 class TimePicker extends StatefulWidget {
   static void show(
-      BuildContext context, {
-        TimeData? startTime,
-        TimeData? endTime,
-        TimeData? selectedTime,
-        bool hideSecond = false,
-        Function()? onCancel,
-        required OnSelected onSelected,
-      }) async {
+    BuildContext context, {
+    TimeData? startTime,
+    TimeData? endTime,
+    TimeData? selectedTime,
+    bool hideSecond = false,
+    Function()? onCancel,
+    required OnSelected onSelected,
+  }) async {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
@@ -123,8 +123,10 @@ class _TimePickerState extends State<TimePicker> {
     });
     // 设置Picker初始值
     hourScrollController = FixedExtentScrollController(initialItem: hourIndex);
-    minuteScrollController = FixedExtentScrollController(initialItem: minuteIndex);
-    secondScrollController = FixedExtentScrollController(initialItem: secondIndex);
+    minuteScrollController =
+        FixedExtentScrollController(initialItem: minuteIndex);
+    secondScrollController =
+        FixedExtentScrollController(initialItem: secondIndex);
   }
 
   List<String> getMinuteList(int selectHour) {
@@ -194,7 +196,8 @@ class _TimePickerState extends State<TimePicker> {
     DateTime now = DateTime.now();
     startTime = widget.startTime ?? TimeData(0, 0, 0);
     endTime = widget.endTime ?? TimeData(23, 59, 59);
-    selectedTime = widget.selectedTime ?? TimeData(now.hour, now.minute, now.second);
+    selectedTime =
+        widget.selectedTime ?? TimeData(now.hour, now.minute, now.second);
     if (endTime.precede(startTime)) {
       endTime = startTime;
     }

@@ -43,14 +43,14 @@ class HomePage extends StatelessWidget {
               children: [
                 InkWell(
                     onTap: () {
-                      Get.to( const WebViewExample());
+                      Get.to(const WebViewExample());
                     },
                     child: HomeLogic.widgetOptions[logic.selectedIndex]),
                 Expanded(
                   child: GridView(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: logic.multiple.value ? 2: 1,
+                        crossAxisCount: logic.multiple.value ? 2 : 1,
                         //横轴三个子widget
                         childAspectRatio: 2.0, //宽高比为1时，子widget
                         mainAxisSpacing: 10, //主轴空隙间距

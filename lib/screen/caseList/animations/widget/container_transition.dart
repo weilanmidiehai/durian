@@ -317,7 +317,7 @@ class _ExampleCard extends StatelessWidget {
               child: Center(
                 child: Image.asset(
                   'assets/lily.png',
-                    fit: BoxFit.cover,
+                  fit: BoxFit.cover,
                   // width: 100,
                 ),
               ),
@@ -335,7 +335,7 @@ class _ExampleCard extends StatelessWidget {
             ),
             child: Text(
               '顾客很高兴, 将被关注 '
-                  '客户服务, 但我给了这样的时间.',
+              '客户服务, 但我给了这样的时间.',
               style: Theme.of(context)
                   .textTheme
                   .bodyMedium!
@@ -438,7 +438,7 @@ class _ExampleSingleTile extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text(
                       '顾客很高兴, 将被关注 '
-                          '客户服务,',
+                      '客户服务,',
                       style: Theme.of(context).textTheme.bodySmall),
                 ],
               ),
@@ -512,18 +512,18 @@ class _DetailsPage extends StatelessWidget {
                 Text(
                   'Title',
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    color: Colors.black54,
-                    fontSize: 30.0,
-                  ),
+                        color: Colors.black54,
+                        fontSize: 30.0,
+                      ),
                 ),
                 const SizedBox(height: 10),
                 Text(
                   _loremIpsumParagraph,
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    color: Colors.black54,
-                    height: 1.5,
-                    fontSize: 16.0,
-                  ),
+                        color: Colors.black54,
+                        height: 1.5,
+                        fontSize: 16.0,
+                      ),
                 ),
               ],
             ),

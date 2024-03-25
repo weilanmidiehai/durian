@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 
@@ -6,7 +5,6 @@ import 'widget/container_transition.dart';
 import 'widget/fade_scale_transition.dart';
 import 'widget/fade_through_transition.dart';
 import 'widget/shared_axis_transition.dart';
-
 
 class TransitionsHomePage extends StatefulWidget {
   const TransitionsHomePage({super.key});

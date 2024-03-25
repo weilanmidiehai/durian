@@ -1,5 +1,3 @@
-
-
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
@@ -25,12 +23,12 @@ class _FadeScaleTransitionDemoState extends State<FadeScaleTransitionDemo>
       reverseDuration: const Duration(milliseconds: 75),
       vsync: this,
     )..addStatusListener((AnimationStatus status) {
-      setState(() {
-        // setState needs to be called to trigger a rebuild because
-        // the 'HIDE FAB'/'SHOW FAB' button needs to be updated based
-        // the latest value of [_controller.status].
+        setState(() {
+          // setState needs to be called to trigger a rebuild because
+          // the 'HIDE FAB'/'SHOW FAB' button needs to be updated based
+          // the latest value of [_controller.status].
+        });
       });
-    });
     super.initState();
   }
 

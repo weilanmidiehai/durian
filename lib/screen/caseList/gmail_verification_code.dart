@@ -5,7 +5,6 @@ import 'package:mailer/smtp_server.dart';
 
 import '../../util/app_theme.dart';
 
-
 class GmailVerificationCode extends StatelessWidget {
   const GmailVerificationCode({Key? key}) : super(key: key);
 
@@ -74,13 +73,13 @@ Widget bodyContainer() {
             labelText: "主题",
             hintText: "主题",
           ),
-        ),TextField(
+        ),
+        TextField(
           autofocus: true,
           decoration: InputDecoration(
             labelText: "内容",
             hintText: "内容",
           ),
-
         ),
         TextField(
           maxLength: 4,

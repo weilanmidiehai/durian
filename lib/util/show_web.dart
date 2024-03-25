@@ -42,7 +42,6 @@ class _ShowWebState extends State<ShowWeb> {
         )
         ..loadRequest(Uri.parse(widget.url));
     });
-
   }
 
   @override
@@ -65,7 +64,7 @@ class _ShowWebState extends State<ShowWeb> {
       ],
       body: load == 100
           ? WebViewWidget(controller: controller)
-          :  Center(
+          : Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,

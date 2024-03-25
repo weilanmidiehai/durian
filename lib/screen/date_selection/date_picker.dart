@@ -5,15 +5,15 @@ typedef OnSelected = Function(DateTime date);
 
 class DatePicker extends StatefulWidget {
   static void show(
-      BuildContext context, {
-        DateTime? startDate,
-        DateTime? endDate,
-        DateTime? selectedDate,
-        bool hideDay = false,
-        bool hideYear = false,
-        Function()? onCancel,
-        required OnSelected onSelected,
-      }) async {
+    BuildContext context, {
+    DateTime? startDate,
+    DateTime? endDate,
+    DateTime? selectedDate,
+    bool hideDay = false,
+    bool hideYear = false,
+    Function()? onCancel,
+    required OnSelected onSelected,
+  }) async {
     showModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,
@@ -99,7 +99,8 @@ class _DatePickerState extends State<DatePicker> {
     });
     // 设置Picker初始值
     yearScrollController = FixedExtentScrollController(initialItem: yearIndex);
-    monthScrollController = FixedExtentScrollController(initialItem: monthIndex);
+    monthScrollController =
+        FixedExtentScrollController(initialItem: monthIndex);
     dayScrollController = FixedExtentScrollController(initialItem: dayIndex);
   }
 
@@ -227,10 +228,9 @@ class _DatePickerState extends State<DatePicker> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-
                       widget.hideYear
-                          ? const SizedBox():
-                      Expanded(child: yearPickerView()),
+                          ? const SizedBox()
+                          : Expanded(child: yearPickerView()),
                       Expanded(child: monthPickerView()),
                       widget.hideDay
                           ? const SizedBox()

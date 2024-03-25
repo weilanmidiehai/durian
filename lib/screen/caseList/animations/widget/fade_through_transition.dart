@@ -1,5 +1,3 @@
-
-
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
@@ -28,10 +26,10 @@ class _FadeThroughTransitionDemoState extends State<FadeThroughTransitionDemo> {
       appBar: AppBar(title: const Text('淡入淡出')),
       body: PageTransitionSwitcher(
         transitionBuilder: (
-            Widget child,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-            ) {
+          Widget child,
+          Animation<double> animation,
+          Animation<double> secondaryAnimation,
+        ) {
           return FadeThroughTransition(
             animation: animation,
             secondaryAnimation: secondaryAnimation,
@@ -80,7 +78,9 @@ class _ExampleCard extends StatelessWidget {
                   child: Container(
                     color: Colors.black26,
                     child: const Image(
-                      image: AssetImage('assets/lily.png',),
+                      image: AssetImage(
+                        'assets/lily.png',
+                      ),
                       fit: BoxFit.cover,
                     ),
                   ),

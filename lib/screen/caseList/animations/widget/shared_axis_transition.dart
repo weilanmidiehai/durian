@@ -1,5 +1,3 @@
-
-
 import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 
@@ -43,10 +41,10 @@ class _SharedAxisTransitionDemoState extends State<SharedAxisTransitionDemo> {
               child: PageTransitionSwitcher(
                 reverse: !_isLoggedIn,
                 transitionBuilder: (
-                    Widget child,
-                    Animation<double> animation,
-                    Animation<double> secondaryAnimation,
-                    ) {
+                  Widget child,
+                  Animation<double> animation,
+                  Animation<double> secondaryAnimation,
+                ) {
                   return SharedAxisTransition(
                     animation: animation,
                     secondaryAnimation: secondaryAnimation,
@@ -126,7 +124,7 @@ class _CoursePage extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: Text(
             '捆绑的类别在您的 Feed 中显示为组. '
-                '您以后可以随时更改此设置.',
+            '您以后可以随时更改此设置.',
             style: TextStyle(
               fontSize: 12.0,
               color: Colors.grey,

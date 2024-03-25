@@ -52,12 +52,12 @@ class FanChart extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: ElevatedButton(
                       onPressed: () {
-                        Get.to(()=> const ShowWeb(
-                          url: 'https://app.flchart.dev/#/pie',
-                          // url:'https://apps.powerapps.com/play/e/default-f65f0d81-a2a9-4903-a388-63a7d734d7cc/a/feaa9628-224d-40f3-a5fa-adbfe6ee1590?tenantId=f65f0d81-a2a9-4903-a388-63a7d734d7cc',
-                          // url: 'https://fairwoodfastfood.sharepoint.com/sites/Index',
-                          title: '更多图形（插件范例网页）',
-                        ));
+                        Get.to(() => const ShowWeb(
+                              url: 'https://app.flchart.dev/#/pie',
+                              // url:'https://apps.powerapps.com/play/e/default-f65f0d81-a2a9-4903-a388-63a7d734d7cc/a/feaa9628-224d-40f3-a5fa-adbfe6ee1590?tenantId=f65f0d81-a2a9-4903-a388-63a7d734d7cc',
+                              // url: 'https://fairwoodfastfood.sharepoint.com/sites/Index',
+                              title: '更多图形（插件范例网页）',
+                            ));
                       },
                       child: const Text('更多图形（插件范例网页')),
                 )
