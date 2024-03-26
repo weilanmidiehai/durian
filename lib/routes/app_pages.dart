@@ -1,14 +1,14 @@
 import 'package:get/get.dart';
 import '../navigation_Page.dart';
 import '../screen/caseList/animations/index.dart';
+import '../screen/caseList/date_selection/index.dart';
 import '../screen/caseList/fan_chart/index.dart';
 import '../screen/caseList/flip_card.dart';
 import '../screen/caseList/gmail_verification_code.dart';
+import '../screen/caseList/guide/guide_index.dart';
 import '../screen/caseList/img.dart';
 import '../screen/caseList/pdf/pdf_view.dart';
 import '../screen/caseList/time_picker.dart';
-import '../screen/date_selection/index.dart';
-import '../screen/guide/guide_index.dart';
 
 class AppPages {
   AppPages._();

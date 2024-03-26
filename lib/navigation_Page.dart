@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-import 'screen/case/view.dart';
+import 'screen/my.dart';
+import 'screen/view.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -56,7 +57,7 @@ class _RootPageState extends State<BottomNavigationPage> {
     HomePage(),
     HomePage(),
     HomePage(),
-    HomePage(),
+    MyProfile(),
   ];
 
   @override

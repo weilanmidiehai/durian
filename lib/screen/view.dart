@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../module/case_list.dart';
-import '../../widget/listview_style.dart';
-import '../caseList/show_webview.dart';
-import 'logic.dart';
-import 'widget/home_drawer.dart';
+import '../module/case_list.dart';
+import '../widget/listview_style.dart';
+import 'caseList/show_webview.dart';
+import 'case/logic.dart';
+import 'case/widget/home_drawer.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);

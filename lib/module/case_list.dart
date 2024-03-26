@@ -22,11 +22,11 @@ class HomeList {
     ),
     HomeList(
       navigateScreen: '/GmailVerificationCode',
-      title: '邮件发送',
+      title: '邮件发送\n smtp_server',
     ),
     HomeList(
       navigateScreen: '/Img',
-      title: '图片选择',
+      title: '图片选择\n image_picker',
     ),
     HomeList(
       navigateScreen: '/FlipCard',
