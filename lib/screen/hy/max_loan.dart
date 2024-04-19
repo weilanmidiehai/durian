@@ -11,11 +11,11 @@ class MAX extends StatelessWidget {
     return Scaffold(
       body: Column(children: [
         Container(
-          height: 605.5.h,
+          height: 600.h,
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/image/bg.png'),
-              fit: BoxFit.fitWidth, // 图片填充方式
+              fit: BoxFit.cover, // 图片填充方式
             ),
           ),
           child: Container(
@@ -78,13 +78,23 @@ class MAX extends StatelessWidget {
                             ],
                           ),
                         ),
-                        
-                        Container(
-                          margin: EdgeInsets.only(left: 30.w),
-                          child: Text('x5.000,000',
-                          style: TextStyle(fontSize: 52.sp),
+
+                        Expanded(
+                          child: Container(
+                            margin: EdgeInsets.only(left: 30.w),
+                            child: Text('x5.000,000',
+                            style: TextStyle(fontSize: 52.sp),
+                            ),
                           ),
-                        )
+                        ),
+
+                        Container(
+                          alignment: Alignment.center,
+                            padding: EdgeInsets.symmetric(horizontal: 60.w,vertical: 30.h),
+
+                            child: Image(image:const AssetImage('assets/image/time.png'),width: 800.w, ))
+
+
                       ],
                     ),
                   ),
