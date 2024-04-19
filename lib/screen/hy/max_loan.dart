@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MAX extends StatelessWidget {
@@ -9,7 +7,7 @@ class MAX extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: [
+      body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
           height: 600.h,
           decoration: const BoxDecoration(
@@ -78,29 +76,60 @@ class MAX extends StatelessWidget {
                             ],
                           ),
                         ),
-
                         Expanded(
                           child: Container(
                             margin: EdgeInsets.only(left: 30.w),
-                            child: Text('x5.000,000',
-                            style: TextStyle(fontSize: 52.sp),
+                            child: Text(
+                              'x5.000,000',
+                              style: TextStyle(fontSize: 52.sp),
                             ),
                           ),
                         ),
-
                         Container(
-                          alignment: Alignment.center,
-                            padding: EdgeInsets.symmetric(horizontal: 60.w,vertical: 30.h),
-
-                            child: Image(image:const AssetImage('assets/image/time.png'),width: 800.w, ))
-
-
+                            alignment: Alignment.center,
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 60.w, vertical: 30.h),
+                            child: Image(
+                              image: const AssetImage('assets/image/time.png'),
+                              width: 800.w,
+                            ))
                       ],
                     ),
                   ),
                 )
               ],
             ),
+          ),
+        ),
+        Container(
+            padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.w),
+            child: Image(
+              image: const AssetImage('assets/image/how.png'),
+              width: 271.w,
+            )),
+        ElevatedButton(
+          onPressed: () {
+            // 当按钮被点击时执行的操作
+            print('Button Clicked!');
+          },
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+            // 可以根据需要设置按钮的其他样式
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                'Button', // 替换为你的文字
+                style: TextStyle(fontSize: 16), // 可以根据需要设置文字的样式
+              ),
+              const SizedBox(width: 10), // 调整图像和文字之间的间距
+              Image.asset(
+                'assets/image/btn.png', // 替换为你的图片路径
+                width: 24, // 调整图像的大小
+                height: 24,
+              ),
+            ],
           ),
         ),
       ]),
