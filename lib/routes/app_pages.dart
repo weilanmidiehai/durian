@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import '../navigation_Page.dart';
 import '../screen/caseList/animations/index.dart';
+import '../screen/caseList/bbb.dart';
 import '../screen/caseList/date_selection/index.dart';
 import '../screen/caseList/fan_chart/index.dart';
 import '../screen/caseList/flip_card.dart';
@@ -28,5 +29,6 @@ class AppPages {
     GetPage(name: '/GuideIndex', page: () => const GuideIndex()),
     GetPage(name: '/TimePicker', page: () => const TimePicker()),
     GetPage(name: '/DateSelection', page: () => const DateSelection()),
+    GetPage(name: '/TestWidget', page: () => const TestWidget()),
   ];
 }

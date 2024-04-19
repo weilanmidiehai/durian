@@ -47,6 +47,9 @@ class HomeList {
     HomeList(
       navigateScreen: '/DateSelection',
       title: '日期时间选择（弹窗）',
+    ),HomeList(
+      navigateScreen: '/TestWidget',
+      title: '状态管理工具，less里面可以更新',
     ),
   ];
 }

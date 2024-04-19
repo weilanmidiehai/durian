@@ -24,6 +24,7 @@ dependencies:
   mailer: ^6.0.1
   webview_flutter: ^4.2.4
   animations: ^2.0.8
+  flutter_screenutil: ^5.9.0
 
 
 dev_dependencies:
