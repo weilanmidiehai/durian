@@ -4,6 +4,7 @@ import 'package:lottie/lottie.dart';
 
 import 'screen/hy/max_loan.dart';
 import 'screen/my.dart';
+import 'screen/test.dart';
 import 'screen/view.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -56,8 +57,8 @@ class _RootPageState extends State<BottomNavigationPage> {
   int _selectedIndex = 0; // 用作被选中的 Tab 的索引号
   final List _tabPages = [
     HomePage(),
-    MAX(),
-    HomePage(),
+    const MAX(),
+    Test(),
     MyProfile(),
   ];
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'coustom_row.dart';
+
 class MAX extends StatelessWidget {
   const MAX({super.key});
 
@@ -107,6 +109,31 @@ class MAX extends StatelessWidget {
               image: const AssetImage('assets/image/how.png'),
               width: 271.w,
             )),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.w),
+          child: CustomRow(
+            row: SizedBox(
+              width: 280.w,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image(
+                    image: const AssetImage('assets/image/document_icon.png'),
+                    width: 24.w,
+                  ),
+                  Text(
+                    'How to get a loan?',
+                    style: TextStyle(
+                        fontSize: 24.0.w,
+                        color: const Color(0xff7059f0),
+                        fontWeight: FontWeight.bold), // 文字样式
+                    textAlign: TextAlign.center, // 文本居中
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
         ElevatedButton(
           onPressed: () {
             // 当按钮被点击时执行的操作
