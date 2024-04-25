@@ -8,9 +8,11 @@ class AAA extends StatefulWidget {
 class _AAAState extends State<AAA> with SingleTickerProviderStateMixin {
   // 图片列表
   List<String> imgList = [
-    "assets/image/lb01.png",
-    "assets/image/lb01.png",
-    "assets/image/lb01.png",
+    "assets/bg/2.png",
+    "assets/bg/9.png",
+    "assets/bg/7.png",
+    "assets/bg/17.png",
+    "assets/bg/5.png",
   ];
 
   late AnimationController _controller;
