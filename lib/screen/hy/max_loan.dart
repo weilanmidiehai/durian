@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -104,12 +105,6 @@ class MAX extends StatelessWidget {
           ),
         ),
         Container(
-            padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.w),
-            child: Image(
-              image: const AssetImage('assets/image/how.png'),
-              width: 271.w,
-            )),
-        Container(
           padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.w),
           child: CustomRow(
             row: SizedBox(
@@ -134,29 +129,37 @@ class MAX extends StatelessWidget {
             ),
           ),
         ),
-        ElevatedButton(
-          onPressed: () {
-            // 当按钮被点击时执行的操作
-            print('Button Clicked!');
-          },
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-            // 可以根据需要设置按钮的其他样式
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text(
-                'Button', // 替换为你的文字
-                style: TextStyle(fontSize: 16), // 可以根据需要设置文字的样式
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.w),
+          alignment: Alignment.center,
+          child: InkWell(
+            onTap: (){},
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: const LinearGradient(
+                  colors: [Color(0xfffeb31d), Color(0xfffd9a1c)], // 渐变色
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                ),
+                borderRadius: BorderRadius.circular(22.w), // 圆角
               ),
-              const SizedBox(width: 10), // 调整图像和文字之间的间距
-              Image.asset(
-                'assets/image/btn.png', // 替换为你的图片路径
-                width: 24, // 调整图像的大小
-                height: 24,
+              padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Apply Now', // 替换为你的文字
+                    style: TextStyle(fontSize: 30.w,fontWeight: FontWeight.bold,color: Colors.white), // 可以根据需要设置文字的样式
+                  ),
+                  const SizedBox(width: 10), // 调整图像和文字之间的间距
+                  Image.asset(
+                    'assets/image/btn.png', // 替换为你的图片路径
+                    width: 24, // 调整图像的大小
+                    height: 24,
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ]),
