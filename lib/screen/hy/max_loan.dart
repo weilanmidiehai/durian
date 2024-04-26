@@ -133,7 +133,7 @@ class MAX extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.w),
           alignment: Alignment.center,
           child: InkWell(
-            onTap: (){},
+            onTap: () {},
             child: Container(
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
@@ -143,13 +143,17 @@ class MAX extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(22.w), // 圆角
               ),
-              padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'Apply Now', // 替换为你的文字
-                    style: TextStyle(fontSize: 30.w,fontWeight: FontWeight.bold,color: Colors.white), // 可以根据需要设置文字的样式
+                    style: TextStyle(
+                        fontSize: 30.w,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white), // 可以根据需要设置文字的样式
                   ),
                   const SizedBox(width: 10), // 调整图像和文字之间的间距
                   Image.asset(

@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import '../navigation_Page.dart';
 import '../screen/caseList/animations/index.dart';
-import '../screen/caseList/bbb.dart';
+import '../screen/caseList/carousel/carousel.dart';
 import '../screen/caseList/date_selection/index.dart';
 import '../screen/caseList/fan_chart/index.dart';
 import '../screen/caseList/flip_card.dart';
@@ -9,6 +9,7 @@ import '../screen/caseList/gmail_verification_code.dart';
 import '../screen/caseList/guide/guide_index.dart';
 import '../screen/caseList/img.dart';
 import '../screen/caseList/pdf/pdf_view.dart';
+import '../screen/caseList/rx_inherited_provider.dart';
 import '../screen/caseList/time_picker.dart';
 
 class AppPages {
@@ -29,6 +30,7 @@ class AppPages {
     GetPage(name: '/GuideIndex', page: () => const GuideIndex()),
     GetPage(name: '/TimePicker', page: () => const TimePicker()),
     GetPage(name: '/DateSelection', page: () => const DateSelection()),
-    GetPage(name: '/TestWidget', page: () => const TestWidget()),
+    GetPage(name: '/RXProvider', page: () => const RXProvider()),
+    GetPage(name: '/Carousel', page: () => Carousel()),
   ];
 }

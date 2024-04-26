@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AAA extends StatefulWidget {
+class CTest extends StatefulWidget {
+  const CTest({super.key});
+
   @override
-  _AAAState createState() => _AAAState();
+  State<CTest> createState() => _CTestState();
 }
 
-class _AAAState extends State<AAA> with SingleTickerProviderStateMixin {
+class _CTestState extends State<CTest> with SingleTickerProviderStateMixin {
   // 图片列表
   List<String> imgList = [
     "assets/bg/2.png",

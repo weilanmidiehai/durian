@@ -4,10 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CustomRow extends StatelessWidget {
   const CustomRow({super.key, required this.row, this.color});
 
-
-  final Widget  row;
+  final Widget row;
   final Color? color;
-
 
   @override
   Widget build(BuildContext context) {

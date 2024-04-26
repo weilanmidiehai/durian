@@ -15,9 +15,9 @@ class _MyProfileState extends State<MyProfile> {
         backgroundColor: Colors.transparent,
         actions: [
           IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.edit),
-                    )
+            onPressed: () {},
+            icon: const Icon(Icons.edit),
+          )
         ],
       ),
       body: Column(

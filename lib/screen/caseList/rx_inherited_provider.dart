@@ -21,14 +21,14 @@ class RxInheritedProvider<T extends ChangeNotifier> extends StatelessWidget {
 }
 
 class RxInheritedWidget<T extends ChangeNotifier> extends InheritedNotifier<T> {
-  const RxInheritedWidget({super.key,
+  const RxInheritedWidget({
+    super.key,
     required T value,
     required super.child,
   }) : super(notifier: value);
 
   get value => notifier;
 }
-
 
 class ConsumerBuilder<T extends ChangeNotifier> extends StatelessWidget {
   final Widget Function(BuildContext context, T value) builder;
@@ -45,20 +45,19 @@ class ConsumerBuilder<T extends ChangeNotifier> extends StatelessWidget {
   }
 }
 
-
-
-
 ///提供注册依赖方法
 abstract class RxTool {
   static T of<T extends ChangeNotifier>(BuildContext context) {
-    return (_getInheritedElement<T>(context).widget as RxInheritedWidget<T>).value;
+    return (_getInheritedElement<T>(context).widget as RxInheritedWidget<T>)
+        .value;
   }
 
   static void register<T extends ChangeNotifier>(BuildContext context) {
     var element = _getInheritedElement<T>(context);
     // context.dependOnInheritedElement(element);
 
-    context.dependOnInheritedWidgetOfExactType<RxInheritedWidget<T>>(aspect: element.widget);
+    context.dependOnInheritedWidgetOfExactType<RxInheritedWidget<T>>(
+        aspect: element.widget);
 
     //这种方式不产生关联关系
     // context.getElementForInheritedWidgetOfExactType<RxInheritedWidget<T>>();
@@ -66,13 +65,15 @@ abstract class RxTool {
 
   static InheritedElement _getInheritedElement<T extends ChangeNotifier>(
       BuildContext context) {
-    var element = context.getElementForInheritedWidgetOfExactType<RxInheritedWidget<T>>();
+    var element =
+        context.getElementForInheritedWidgetOfExactType<RxInheritedWidget<T>>();
     if (element == null) {
       throw (Exception("RxInheritedWidget<${T.runtimeType}> is find null"));
     }
     return element;
   }
 }
+
 /// demo 示例
 class Counter extends ChangeNotifier {
   int count = 0;
@@ -82,8 +83,8 @@ class Counter extends ChangeNotifier {
   }
 }
 
-class TestWidget extends StatelessWidget {
-  const TestWidget({super.key});
+class RXProvider extends StatelessWidget {
+  const RXProvider({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

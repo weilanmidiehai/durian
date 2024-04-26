@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
+import 'screen/caseList/carousel/carousel.dart';
 import 'screen/hy/max_loan.dart';
 import 'screen/my.dart';
-import 'screen/test.dart';
 import 'screen/view.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -58,7 +58,7 @@ class _RootPageState extends State<BottomNavigationPage> {
   final List _tabPages = [
     HomePage(),
     const MAX(),
-    Test(),
+    Carousel(),
     MyProfile(),
   ];
 
