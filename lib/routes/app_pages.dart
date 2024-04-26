@@ -10,6 +10,7 @@ import '../screen/caseList/guide/guide_index.dart';
 import '../screen/caseList/img.dart';
 import '../screen/caseList/pdf/pdf_view.dart';
 import '../screen/caseList/rx_inherited_provider.dart';
+import '../screen/caseList/table/table.dart';
 import '../screen/caseList/time_picker.dart';
 
 class AppPages {
@@ -32,5 +33,6 @@ class AppPages {
     GetPage(name: '/DateSelection', page: () => const DateSelection()),
     GetPage(name: '/RXProvider', page: () => const RXProvider()),
     GetPage(name: '/Carousel', page: () => Carousel()),
+    GetPage(name: '/Table', page: () => const Table()),
   ];
 }

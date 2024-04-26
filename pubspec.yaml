@@ -26,6 +26,7 @@ dependencies:
   animations: ^2.0.8
   flutter_screenutil: ^5.9.0
   flutter_swiper_null_safety: ^1.0.2
+  data_table_2: ^2.5.12
 
 
 dev_dependencies:

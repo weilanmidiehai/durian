@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 
 import '../../../util/show_web.dart';
 import 'c_test.dart';
+import 'c_test2.dart';
 
 class Carousel extends StatelessWidget {
   Carousel({super.key});
@@ -27,7 +28,11 @@ class Carousel extends StatelessWidget {
               onPressed: () {
                 Get.to(() => const CTest());
               },
-              child: const Text('自己写的，用动画实现图片更换')),
+              child: const Text('自己写的，用动画实现图片更换')), ElevatedButton(
+              onPressed: () {
+                Get.to(() =>   CTest2());
+              },
+              child: const Text('CTest2测试')),
           SizedBox(
             child: Column(
               children: <Widget>[

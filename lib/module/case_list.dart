@@ -24,5 +24,6 @@ class HomeList {
     HomeList(navigateScreen: '/DateSelection', title: '日期时间选择（弹窗）'),
     HomeList(navigateScreen: '/RXProvider', title: '状态管理工具，less里面可以更新'),
     HomeList(navigateScreen: '/Carousel', title: '轮播图'),
+    HomeList(navigateScreen: '/Table', title: '表格Table'),
   ];
 }
