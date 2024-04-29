@@ -18,7 +18,7 @@ class _CTestState extends State<CTest> with SingleTickerProviderStateMixin {
   ];
 
   late AnimationController _controller;
-  late Animation<double> _animation;
+  late Animation<double> animation;
   late int _currentIndex;
 
   @override
@@ -28,7 +28,7 @@ class _CTestState extends State<CTest> with SingleTickerProviderStateMixin {
       vsync: this,
       duration: const Duration(seconds: 3),
     );
-    _animation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller)
+    animation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller)
       ..addListener(() {
         setState(() {});
       })

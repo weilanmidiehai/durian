@@ -2,25 +2,29 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: CTest2(),
     );
   }
 }
 
 class CTest2 extends StatefulWidget {
+  const CTest2({super.key});
+
   @override
-  _CTest2State createState() => _CTest2State();
+  State<CTest2> createState() => _CTest2State();
 }
 
 class _CTest2State extends State<CTest2> {
-  PageController _pageController = PageController();
+  final PageController _pageController = PageController();
   int _currentPage = 0;
   late Timer _timer;
 
@@ -34,7 +38,8 @@ class _CTest2State extends State<CTest2> {
       });
       // 当页面到达最后一页时，手动滚动到第一页
       if (_currentPage == 2) {
-        _pageController.animateToPage(0, duration: Duration(milliseconds: 500), curve: Curves.ease);
+        _pageController.animateToPage(0,
+            duration: const Duration(milliseconds: 500), curve: Curves.ease);
       }
     });
   }
@@ -47,9 +52,10 @@ class _CTest2State extends State<CTest2> {
   }
 
   void _startAutoPlay() {
-    _timer = Timer.periodic(Duration(seconds: 3), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
       if (_currentPage < 2) {
-        _pageController.nextPage(duration: Duration(milliseconds: 500), curve: Curves.ease);
+        _pageController.nextPage(
+            duration: const Duration(milliseconds: 500), curve: Curves.ease);
       }
     });
   }
@@ -58,7 +64,7 @@ class _CTest2State extends State<CTest2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Swiper'),
+        title: const Text('Swiper'),
       ),
       body: Center(
         child: SizedBox(
@@ -68,20 +74,23 @@ class _CTest2State extends State<CTest2> {
             children: <Widget>[
               Container(
                 color: Colors.red,
-                child: Center(
-                  child: Text('Page 1', style: TextStyle(color: Colors.white, fontSize: 24.0)),
+                child: const Center(
+                  child: Text('Page 1',
+                      style: TextStyle(color: Colors.white, fontSize: 24.0)),
                 ),
               ),
               Container(
                 color: Colors.blue,
-                child: Center(
-                  child: Text('Page 2', style: TextStyle(color: Colors.white, fontSize: 24.0)),
+                child: const Center(
+                  child: Text('Page 2',
+                      style: TextStyle(color: Colors.white, fontSize: 24.0)),
                 ),
               ),
               Container(
                 color: Colors.green,
-                child: Center(
-                  child: Text('Page 3', style: TextStyle(color: Colors.white, fontSize: 24.0)),
+                child: const Center(
+                  child: Text('Page 3',
+                      style: TextStyle(color: Colors.white, fontSize: 24.0)),
                 ),
               ),
             ],

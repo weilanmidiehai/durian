@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import 'screen/caseList/carousel/carousel.dart';
-import 'screen/hy/max_loan.dart';
+import 'screen/hy/hy_index.dart';
 import 'screen/my.dart';
 import 'screen/view.dart';
 
@@ -57,9 +57,9 @@ class _RootPageState extends State<BottomNavigationPage> {
   int _selectedIndex = 0; // 用作被选中的 Tab 的索引号
   final List _tabPages = [
     HomePage(),
-    const MAX(),
+    const HyIndex(),
     Carousel(),
-    MyProfile(),
+    const MyProfile(),
   ];
 
   @override

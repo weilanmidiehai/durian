@@ -28,9 +28,10 @@ class Carousel extends StatelessWidget {
               onPressed: () {
                 Get.to(() => const CTest());
               },
-              child: const Text('自己写的，用动画实现图片更换')), ElevatedButton(
+              child: const Text('自己写的，用动画实现图片更换')),
+          ElevatedButton(
               onPressed: () {
-                Get.to(() =>   CTest2());
+                Get.to(() => const CTest2());
               },
               child: const Text('CTest2测试')),
           SizedBox(

@@ -16,7 +16,7 @@ class _TimePickerState extends State<TimePicker> {
       ),
       body: Center(
         child: Column(
-          children: [ElevatedButton(onPressed: () {}, child: Text(''))],
+          children: [ElevatedButton(onPressed: () {}, child: const Text(''))],
         ),
       ),
     );

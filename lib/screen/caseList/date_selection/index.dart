@@ -37,7 +37,7 @@ class _DateSelectionState extends State<DateSelection> {
                   selectedDate: DateTime(2023, 3, 3),
                   endDate: DateTime(2025, 5, 5),
                   onSelected: (date) {
-                    print(date.toString());
+                    debugPrint(date.toString());
                     // MsgUtil.toast(date.toString());
                   },
                 );
@@ -58,7 +58,7 @@ class _DateSelectionState extends State<DateSelection> {
                   selectedDate: DateTime(2023, 3),
                   endDate: DateTime(2025, 5),
                   onSelected: (date) {
-                    print(date.toString());
+                    debugPrint(date.toString());
                     // MsgUtil.toast(date.toString());
                   },
                 );
@@ -80,7 +80,7 @@ class _DateSelectionState extends State<DateSelection> {
                   selectedDate: DateTime(2023, 3),
                   endDate: DateTime(2025, 5),
                   onSelected: (date) {
-                    print(date.toString());
+                    debugPrint(date.toString());
                     // MsgUtil.toast(date.toString());
                   },
                 );
@@ -100,7 +100,7 @@ class _DateSelectionState extends State<DateSelection> {
                   selectedTime: TimeData(15, 15, 15),
                   endTime: TimeData(22, 22, 22),
                   onSelected: (time) {
-                    print(time.toString());
+                    debugPrint(time.toString());
                     // MsgUtil.toast(time.toString());
                   },
                 );
@@ -121,7 +121,7 @@ class _DateSelectionState extends State<DateSelection> {
                   selectedTime: TimeData(15, 15),
                   endTime: TimeData(22, 22),
                   onSelected: (time) {
-                    print(time.toString());
+                    debugPrint(time.toString());
 
                     // MsgUtil.toast(time.toString());
                   },

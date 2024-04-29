@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-import 'coustom_row.dart';
+import 'custom_row.dart';
 
 class MAX extends StatelessWidget {
   const MAX({super.key});
@@ -133,7 +133,9 @@ class MAX extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.w),
           alignment: Alignment.center,
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Get.back();
+            },
             child: Container(
               decoration: BoxDecoration(
                 gradient: const LinearGradient(

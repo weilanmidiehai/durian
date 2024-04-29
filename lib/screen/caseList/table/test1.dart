@@ -52,7 +52,7 @@ class _AAAState extends State<Test1> {
   void initState() {
     super.initState();
     controllers = List.generate(rows.length,
-            (index) => TextEditingController(text: rows[index]['number']));
+        (index) => TextEditingController(text: rows[index]['number']));
     focusNodes = List.generate(rows.length, (index) => FocusNode());
     _debounce = Timer(const Duration(milliseconds: 500), () {});
   }
@@ -90,7 +90,7 @@ class _AAAState extends State<Test1> {
     if (_debounce.isActive) _debounce.cancel();
     _debounce = Timer(const Duration(milliseconds: 500), () {
       int index =
-      rows.indexWhere((row) => row['number'].startsWith(searchText));
+          rows.indexWhere((row) => row['number'].startsWith(searchText));
       if (index != -1) {
         var tableKey = customTableKey.currentState;
         tableKey?.controller?.goToPageWithRow(index - 1);
@@ -125,7 +125,7 @@ class _AAAState extends State<Test1> {
                 key: customTableKey,
                 columns: List.generate(
                   columns.length,
-                      (index) =>
+                  (index) =>
                       DataColumn(label: Center(child: Text(columns[index]))),
                 ),
                 dataTableSource: _DataSource(
@@ -177,7 +177,7 @@ class _DataSource extends DataTableSource {
           }
         },
         index: index,
-        specificRowHeight:43,
+        specificRowHeight: 43,
         color: MaterialStateProperty.all(
             index == selectedRowIndex ? Colors.yellow : Colors.white),
         cells: [

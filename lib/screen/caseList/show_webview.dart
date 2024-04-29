@@ -170,11 +170,10 @@ class _WebViewExampleState extends State<WebViewExample> {
     return FloatingActionButton(
       onPressed: () async {
         final String? url = await _controller.currentUrl();
-        if (context.mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Favorited 已收藏 $url')),
-          );
-        }
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Favorited 已收藏 $url')),
+        );
       },
       child: const Icon(Icons.favorite),
     );

@@ -82,8 +82,8 @@ class _ImgState extends State<Img> {
         source: ImageSource.camera, maxHeight: 600, maxWidth: 600);
 
     if (pickedFile != null) {
-      print(pickedFile.path);
-      print('${File(pickedFile.path)}');
+      debugPrint(pickedFile.path);
+      debugPrint('${File(pickedFile.path)}');
       setState(() {
         _imageFile = pickedFile;
       });
@@ -96,9 +96,9 @@ class _ImgState extends State<Img> {
         source: ImageSource.gallery, maxHeight: 600, maxWidth: 600);
 
     if (pickedFile != null) {
-      print('文件路径:${pickedFile.path}');
-      print('文件:${File(pickedFile.path)}');
-      print(
+      debugPrint('文件路径:${pickedFile.path}');
+      debugPrint('文件:${File(pickedFile.path)}');
+      debugPrint(
           '文件大小:${FileSize.getFileSizeString(bytes: File(pickedFile.path).lengthSync())}');
       setState(() {
         _imageFile = pickedFile;

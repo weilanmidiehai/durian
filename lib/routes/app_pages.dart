@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../navigation_Page.dart';
+import '../navigation_page.dart';
 import '../screen/caseList/animations/index.dart';
 import '../screen/caseList/carousel/carousel.dart';
 import '../screen/caseList/date_selection/index.dart';

@@ -32,7 +32,7 @@ class PdfView extends StatelessWidget {
               onPressed: () {
                 PdfPath.createFileOfPdfUrl().then((f) {
                   String remotePDFpath = f.path;
-                  print('1111$remotePDFpath');
+                  debugPrint('1111$remotePDFpath');
                   if (remotePDFpath.isNotEmpty) {
                     Navigator.push(
                       context,
@@ -50,7 +50,7 @@ class PdfView extends StatelessWidget {
                 PdfPath.fromAsset('assets/pdf/pdf123456.pdf', 'pdf123456.pdf')
                     .then((f) {
                   abc = f.path;
-                  print('corruptedPathPDF:::$abc');
+                  debugPrint('corruptedPathPDF:::$abc');
                   Navigator.push(
                     context,
                     MaterialPageRoute(

@@ -9,7 +9,7 @@ class PdfPath {
   //网络pdf
   static createFileOfPdfUrl() async {
     Completer completer = Completer();
-    print("开始从互联网下载文件!");
+    debugPrint("开始从互联网下载文件!");
     try {
       const url = "http://www.pdf995.com/samples/pdf.pdf";
       final filename = url.substring(url.lastIndexOf("/") + 1);
@@ -17,8 +17,8 @@ class PdfPath {
       var response = await request.close();
       var bytes = await consolidateHttpClientResponseBytes(response);
       var dir = await getApplicationDocumentsDirectory();
-      print("下载文件");
-      print("下载文件${dir.path}/$filename");
+      debugPrint("下载文件");
+      debugPrint("下载文件${dir.path}/$filename");
       File file = File("${dir.path}/$filename");
 
       await file.writeAsBytes(bytes, flush: true);

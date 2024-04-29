@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MyProfile extends StatefulWidget {
+  const MyProfile({super.key});
+
   @override
-  _MyProfileState createState() => _MyProfileState();
+  State<MyProfile> createState() => _MyProfileState();
 }
 
 class _MyProfileState extends State<MyProfile> {
@@ -22,7 +24,7 @@ class _MyProfileState extends State<MyProfile> {
       ),
       body: Column(
         children: [
-          Container(
+          SizedBox(
             // color: Colors.yellowAccent,
             height: 350.0,
             child: LayoutBuilder(
