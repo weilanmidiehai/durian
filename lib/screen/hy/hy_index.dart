@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'cash.dart';
 import 'max_loan.dart';
 
 class HyIndex extends StatelessWidget {
@@ -18,7 +19,12 @@ class HyIndex extends StatelessWidget {
               onPressed: () {
                 Get.to(() => const MAX());
               },
-              child: const Text('MAX Loan 頁面'))
+              child: const Text('MAX Loan 頁面')),
+          ElevatedButton(
+              onPressed: () {
+                Get.to(() =>   Cash());
+              },
+              child: const Text('cash 頁面')),
         ],
       ),
     );

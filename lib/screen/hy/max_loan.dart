@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import 'custom_row.dart';
+import 'widget/custom_btn.dart';
+import 'widget/custom_row.dart';
 
 class MAX extends StatelessWidget {
   const MAX({super.key});
@@ -129,43 +130,27 @@ class MAX extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.w),
-          alignment: Alignment.center,
-          child: InkWell(
-            onTap: () {
-              Get.back();
-            },
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [Color(0xfffeb31d), Color(0xfffd9a1c)], // 渐变色
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                ),
-                borderRadius: BorderRadius.circular(22.w), // 圆角
+        CustomBtn(
+          fn: () {
+            Get.back();
+          },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Apply Now', // 替换为你的文字
+                style: TextStyle(
+                    fontSize: 30.w,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white), // 可以根据需要设置文字的样式
               ),
-              padding:
-                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Apply Now', // 替换为你的文字
-                    style: TextStyle(
-                        fontSize: 30.w,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white), // 可以根据需要设置文字的样式
-                  ),
-                  const SizedBox(width: 10), // 调整图像和文字之间的间距
-                  Image.asset(
-                    'assets/image/btn.png', // 替换为你的图片路径
-                    width: 24, // 调整图像的大小
-                    height: 24,
-                  ),
-                ],
+              const SizedBox(width: 10), // 调整图像和文字之间的间距
+              Image.asset(
+                'assets/image/btn.png', // 替换为你的图片路径
+                width: 24, // 调整图像的大小
+                height: 24,
               ),
-            ),
+            ],
           ),
         ),
       ]),
