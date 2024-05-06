@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -78,22 +76,63 @@ class Cash extends StatelessWidget {
                     list: controller.a,
                   ),
                   Container(
-                      height: 100.h,
+                      // height: 777.h,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(24.h),
                         color: Colors.white,
                       ),
                       margin: EdgeInsets.symmetric(horizontal: 30.h),
-                      padding: EdgeInsets.symmetric(horizontal: 30.h),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 30.w, vertical: 30.h),
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               'Period',
-                              style: TextStyle(fontSize: 30.sp),
+                              style: TextStyle(
+                                  fontSize: 30.sp, fontWeight: FontWeight.bold
+                                  ),
                             ),
-
-                            BorderText(text: 'eee', child: Container(height: 20,color: Colors.pink,),)
+                            const BorderText(
+                              text: '01',
+                              list: [
+                                {
+                                  'name': 'Repayment amount',
+                                  'value': '10,000.00'
+                                },
+                                {
+                                  'name': 'Repayment time',
+                                  'value': '26/2/2023'
+                                },
+                              ],
+                            ),
+                            const BorderText(
+                              text: '02',
+                              list: [
+                                {
+                                  'name': 'Repayment amount',
+                                  'value': '10,000.00'
+                                },
+                                {
+                                  'name': 'Repayment time',
+                                  'value': '26/2/2023'
+                                },
+                              ],
+                            ),
+                            const BorderText(
+                              text: '03',
+                              list: [
+                                {
+                                  'name': 'Repayment amount',
+                                  'value': '10,000.00'
+                                },
+                                {
+                                  'name': 'Repayment time',
+                                  'value': '26/2/2023'
+                                },
+                              ],
+                            ),
                           ])),
                   SizedBox(
                     height: 50.h,
