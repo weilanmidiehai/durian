@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_swiper_null_safety/flutter_swiper_null_safety.dart';
 import 'package:get/get.dart';
 
 import 'widget/custom_btn.dart';
 import 'widget/custom_row.dart';
 
 class MAX extends StatelessWidget {
-  const MAX({super.key});
+    MAX({super.key});
 
+  //图片列表
+  final List<Map> imgList = [
+    {"assets": "assets/image/lb01.png"},
+    {"assets": "assets/image/lb01.png"},
+    {"assets": "assets/image/lb01.png"},
+    {"assets": "assets/image/lb01.png"},
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -128,6 +136,46 @@ class MAX extends StatelessWidget {
                 ],
               ),
             ),
+          ),
+        ),
+
+        SizedBox(
+          width: 900,
+          // height: 300,
+          child: Swiper(
+            autoplay: true,
+            layout: SwiperLayout.CUSTOM,
+            customLayoutOption:
+            CustomLayoutOption(startIndex: 0, stateCount: 3)
+              ..addScale([
+                0.7,
+                1.0,
+                0.7,
+              ], Alignment.center)
+              ..addOpacity([
+                0.6,
+                1.0,
+                0.6,
+              ])
+              ..addTranslate([
+                const Offset(-150.0, 0),
+                const Offset(0.0, 0.0),
+                const Offset(150.0, 0),
+              ]),
+            itemWidth: 230.0,
+            itemHeight: 150.0,
+            fade: 0.1,
+            outer: true,
+            viewportFraction: 0.3,
+            scale: 0.1,
+            itemBuilder: (context, index) {
+              //https://blog.csdn.net/gloryFlow/article/details/134715733
+              //教程链接
+              return Image.asset(
+                imgList[index]['assets'],
+              );
+            },
+            itemCount: imgList.length,
           ),
         ),
         CustomBtn(

@@ -17,12 +17,12 @@ class HyIndex extends StatelessWidget {
         children: [
           ElevatedButton(
               onPressed: () {
-                Get.to(() => const MAX());
+                Get.to(() => MAX());
               },
               child: const Text('MAX Loan 頁面')),
           ElevatedButton(
               onPressed: () {
-                Get.to(() =>   Cash());
+                Get.to(() => Cash());
               },
               child: const Text('cash 頁面')),
         ],
