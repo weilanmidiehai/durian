@@ -135,7 +135,7 @@ class Cash extends StatelessWidget {
                             ),
                           ])),
                   SizedBox(
-                    height: 50.h,
+                    height: 30.h,
                   ),
                   const Text(
                     textAlign: TextAlign.center,
