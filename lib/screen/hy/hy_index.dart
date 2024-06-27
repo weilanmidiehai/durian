@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'cash.dart';
 import 'max_loan.dart';
+import 'repay.dart';
 
 class HyIndex extends StatelessWidget {
   const HyIndex({super.key});
@@ -24,7 +25,11 @@ class HyIndex extends StatelessWidget {
               onPressed: () {
                 Get.to(() => Cash());
               },
-              child: const Text('cash 頁面')),
+              child: const Text('cash 頁面')),  ElevatedButton(
+              onPressed: () {
+                Get.to(() => const Repay());
+              },
+              child: const Text('還款 頁面')),
         ],
       ),
     );

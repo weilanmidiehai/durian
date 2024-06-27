@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomBtn extends StatelessWidget {
-  const CustomBtn({super.key, this.child, this.fn});
+  const CustomBtn({super.key, this.child, this.fn, this.borderRadius});
 
   final Widget? child;
+  final double? borderRadius;
   final void Function()? fn;
 
   @override
@@ -21,7 +22,7 @@ class CustomBtn extends StatelessWidget {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
             ),
-            borderRadius: BorderRadius.circular(26.w), // 圆角
+            borderRadius: BorderRadius.circular(borderRadius ??26.w), // 圆角
           ),
           padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
           child: child ?? Container(),
