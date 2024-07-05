@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../module/case_list.dart';
 
 class ListViewStyle extends StatelessWidget {
@@ -19,18 +20,18 @@ class ListViewStyle extends StatelessWidget {
         borderRadius: const BorderRadius.all(Radius.circular(8.0)),
         child: InkWell(
           onTap: callBack,
-          child: Card(
+          child: Container(
             // Container時候的背景
             // color: Colors.pinkAccent,
-            // alignment: Alignment.center,
-            // decoration: BoxDecoration(
-            //   image: DecorationImage(
-            //     image: AssetImage(context.isDarkMode
-            //         ? listData!.darkImagePath
-            //         : listData!.imagePath),
-            //     fit: BoxFit.fill, // 完全填充
-            //   ),
-            // ),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(context.isDarkMode
+                    ? listData!.darkImagePath
+                    : listData!.imagePath),
+                fit: BoxFit.fill, // 完全填充
+              ),
+            ),
             child: Center(
               child: Text(
                 '${listData?.title}',

@@ -1,4 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
+import '../util/image_picker_helper.dart';
 
 class MyProfile extends StatefulWidget {
   const MyProfile({super.key});
@@ -8,6 +13,8 @@ class MyProfile extends StatefulWidget {
 }
 
 class _MyProfileState extends State<MyProfile> {
+  String imagePath = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,13 +50,32 @@ class _MyProfileState extends State<MyProfile> {
                     Positioned(
                       left: constraints.maxWidth / 2 - 50,
                       top: constraints.maxHeight - 100,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(90),
-                        child: const Image(
-                          image: AssetImage("assets/logo.png"),
-                          width: 100,
-                          height: 100,
-                        ),
+                      child: InkWell(
+                        onTap: () {
+                          //ImageSource.camera 照相机 或 ImageSource.gallery 相册
+                          ImagePickerHelper(context).pickWithCropImage(
+                              ImageSource.gallery, (croppedFile) {
+                            //获取到剪切的文件路径，进行相关的操作
+                            debugPrint("croppedFile:${croppedFile.path}");
+                            setState(() {
+                              imagePath = croppedFile.path;
+                            });
+                          });
+                        },
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(90),
+                            child: imagePath.isEmpty
+                                ? const Image(
+                                    image: AssetImage("assets/logo.png"),
+                                    width: 100,
+                                    height: 100,
+                                    fit: BoxFit.fitWidth,
+                                  )
+                                : Image.memory(
+                                    File(imagePath).readAsBytesSync(),
+                                    gaplessPlayback: true,
+                                    width: 100,
+                                    height: 100)),
                       ),
                     )
                   ],
@@ -59,7 +85,7 @@ class _MyProfileState extends State<MyProfile> {
           ),
           Container(
             color: Colors.greenAccent,
-            height: 300,
+            height: 100,
           )
         ],
       ),
