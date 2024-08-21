@@ -25,5 +25,7 @@ class HomeList {
     HomeList(navigateScreen: '/RXProvider', title: '状态管理工具，less里面可以更新'),
     HomeList(navigateScreen: '/Carousel', title: '轮播图'),
     HomeList(navigateScreen: '/Table', title: '表格Table'),
+    HomeList(navigateScreen: '/Navigation', title: '导航栏'),
+    HomeList(navigateScreen: '/BottomAppBarDemo', title: '底部导航栏'),
   ];
 }

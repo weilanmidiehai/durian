@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import '../navigation_page.dart';
 import '../screen/caseList/animations/index.dart';
+import '../screen/caseList/navigation/bottom_appbar.dart';
 import '../screen/caseList/carousel/carousel.dart';
 import '../screen/caseList/date_selection/index.dart';
 import '../screen/caseList/fan_chart/index.dart';
@@ -8,6 +9,7 @@ import '../screen/caseList/flip_card.dart';
 import '../screen/caseList/gmail_verification_code.dart';
 import '../screen/caseList/guide/guide_index.dart';
 import '../screen/caseList/img.dart';
+import '../screen/caseList/navigation/index.dart';
 import '../screen/caseList/pdf/pdf_view.dart';
 import '../screen/caseList/rx_inherited_provider.dart';
 import '../screen/caseList/table/table.dart';
@@ -34,5 +36,7 @@ class AppPages {
     GetPage(name: '/RXProvider', page: () => const RXProvider()),
     GetPage(name: '/Carousel', page: () => Carousel()),
     GetPage(name: '/Table', page: () => const Table()),
+    GetPage(name: '/Navigation', page: () => const NavigationIndex()),
+    GetPage(name: '/BottomAppBarDemo', page: () => const BottomAppBarDemo()),
   ];
 }
