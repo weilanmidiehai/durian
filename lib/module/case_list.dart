@@ -26,6 +26,6 @@ class HomeList {
     HomeList(navigateScreen: '/Carousel', title: '轮播图'),
     HomeList(navigateScreen: '/Table', title: '表格Table'),
     HomeList(navigateScreen: '/Navigation', title: '导航栏'),
-    HomeList(navigateScreen: '/BottomAppBarDemo', title: '底部导航栏'),
+    HomeList(navigateScreen: '/BezierCurve', title: '曲线绘制（贝塞尔曲线）'),
   ];
 }

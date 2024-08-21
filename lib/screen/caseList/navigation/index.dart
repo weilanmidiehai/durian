@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../util/show_web.dart';
 import 'bottom_appbar.dart';
 import 'custom_navigation.dart';
 import 'navigation_rail.dart';
@@ -34,6 +35,22 @@ class _NavigationIndexState extends State<NavigationIndex> {
                 Get.to(() => const BottomAppBarDemo());
               },
               child: const Text('底部導航欄，中間有個圓形圖標')),
+          ElevatedButton(
+              onPressed: () {
+                Get.to(() => const ShowWeb(
+                      url: 'https://juejin.cn/post/7068174135024680990',
+                      title: '花里胡哨的底部菜单1',
+                    ));
+              },
+              child: const Text('花里胡哨的底部菜单1')),
+          ElevatedButton(
+              onPressed: () {
+                Get.to(() => const ShowWeb(
+                      url: 'https://juejin.cn/post/6992127843740155918',
+                      title: '花里胡哨的底部菜单2',
+                    ));
+              },
+              child: const Text('花里胡哨的底部菜单2')),
         ],
       ),
     );
