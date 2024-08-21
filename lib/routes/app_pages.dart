@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import '../navigation_page.dart';
 import '../screen/caseList/animations/index.dart';
 import '../screen/caseList/bezier/bezier_curve.dart';
+import '../screen/caseList/material3_color.dart';
 import '../screen/caseList/navigation/bottom_appbar.dart';
 import '../screen/caseList/carousel/carousel.dart';
 import '../screen/caseList/date_selection/index.dart';
@@ -40,5 +41,6 @@ class AppPages {
     GetPage(name: '/Navigation', page: () => const NavigationIndex()),
     GetPage(name: '/BottomAppBarDemo', page: () => const BottomAppBarDemo()),
     GetPage(name: '/BezierCurve', page: () => const BezierCurve()),
+    GetPage(name: '/Material3Color', page: () => const Material3Color()),
   ];
 }

@@ -27,5 +27,6 @@ class HomeList {
     HomeList(navigateScreen: '/Table', title: '表格Table'),
     HomeList(navigateScreen: '/Navigation', title: '导航栏'),
     HomeList(navigateScreen: '/BezierCurve', title: '曲线绘制（贝塞尔曲线）'),
+    HomeList(navigateScreen: '/Material3Color', title: 'Material3主题色彩'),
   ];
 }
