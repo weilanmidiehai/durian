@@ -50,7 +50,7 @@ class HomePage extends StatelessWidget {
                   child: GridView(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: logic.multiple.value ? 2 : 1,
+                        crossAxisCount: logic.multiple.value ? 4 : 2,
                         //横轴三个子widget
                         childAspectRatio: 2.0, //宽高比为1时，子widget
                         mainAxisSpacing: 10, //主轴空隙间距
