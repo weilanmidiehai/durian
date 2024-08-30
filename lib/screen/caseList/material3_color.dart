@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Material3Color extends StatelessWidget {
   const Material3Color({super.key});
@@ -8,61 +9,64 @@ class Material3Color extends StatelessWidget {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('點擊複製顏色代碼'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ColorTile(name: 'Primary', color: colorScheme.primary),
+              ColorTile(name: 'primary', color: colorScheme.primary),
               ColorTile(
-                  name: 'Primary Container', color: colorScheme.primaryContainer),
-              ColorTile(name: 'Secondary', color: colorScheme.secondary),
+                  name: 'primaryContainer',
+                  color: colorScheme.primaryContainer),
+              ColorTile(name: 'secondary', color: colorScheme.secondary),
               ColorTile(
-                  name: 'Secondary Container',
+                  name: 'secondaryContainer',
                   color: colorScheme.secondaryContainer),
-              ColorTile(name: 'Tertiary', color: colorScheme.tertiary),
+              ColorTile(name: 'tertiary', color: colorScheme.tertiary),
               ColorTile(
-                  name: 'Tertiary Container',
+                  name: 'tertiaryContainer',
                   color: colorScheme.tertiaryContainer),
-              ColorTile(name: 'Surface', color: colorScheme.surface),
-              ColorTile(name: 'Background', color: colorScheme.surface),
-              ColorTile(name: 'Error', color: colorScheme.error),
+              ColorTile(name: 'surface', color: colorScheme.surface),
+              ColorTile(name: 'error', color: colorScheme.error),
               ColorTile(
-                  name: 'Error Container', color: colorScheme.errorContainer),
-              ColorTile(name: 'On Primary', color: colorScheme.onPrimary),
+                  name: 'errorContainer', color: colorScheme.errorContainer),
+              ColorTile(name: 'onPrimary', color: colorScheme.onPrimary),
               ColorTile(
-                  name: 'On Primary Container',
+                  name: 'onPrimaryContainer',
                   color: colorScheme.onPrimaryContainer),
-              ColorTile(name: 'On Secondary', color: colorScheme.onSecondary),
+              ColorTile(name: 'onSecondary', color: colorScheme.onSecondary),
               ColorTile(
-                  name: 'On Secondary Container',
+                  name: 'onSecondaryContainer',
                   color: colorScheme.onSecondaryContainer),
-              ColorTile(name: 'On Tertiary', color: colorScheme.onTertiary),
+              ColorTile(name: 'onTertiary', color: colorScheme.onTertiary),
               ColorTile(
-                  name: 'On Tertiary Container',
+                  name: 'onTertiaryContainer',
                   color: colorScheme.onTertiaryContainer),
-              ColorTile(name: 'On Surface', color: colorScheme.onSurface),
+              ColorTile(name: 'onSurface', color: colorScheme.onSurface),
               ColorTile(
-                  name: 'On Surface Variant',
+                  name: 'onSurfaceVariant',
                   color: colorScheme.onSurfaceVariant),
-              ColorTile(name: 'On Background', color: colorScheme.onSurface),
-              ColorTile(name: 'On Error', color: colorScheme.onError),
+              ColorTile(name: 'onSurface', color: colorScheme.onSurface),
+              ColorTile(name: 'onError', color: colorScheme.onError),
               ColorTile(
-                  name: 'On Error Container',
+                  name: 'onErrorContainer',
                   color: colorScheme.onErrorContainer),
               ColorTile(
-                  name: 'Surface Variant', color: colorScheme.surfaceContainerHighest),
-              ColorTile(name: 'Outline', color: colorScheme.outline),
+                  name: 'surfaceContainerHighest',
+                  color: colorScheme.surfaceContainerHighest),
+              ColorTile(name: 'outline', color: colorScheme.outline),
               ColorTile(name: 'Shadow', color: colorScheme.shadow),
               ColorTile(
-                  name: 'Inverse Surface', color: colorScheme.inverseSurface),
+                  name: 'inverseSurface', color: colorScheme.inverseSurface),
               ColorTile(
-                  name: 'On Inverse Surface',
+                  name: 'onInverseSurface',
                   color: colorScheme.onInverseSurface),
               ColorTile(
-                  name: 'Inverse Primary', color: colorScheme.inversePrimary),
+                  name: 'inversePrimary', color: colorScheme.inversePrimary),
             ],
           ),
         ),
@@ -79,16 +83,25 @@ class ColorTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          width: 24,
-          height: 24,
-          color: color,
-        ),
-        const SizedBox(width: 8),
-        Text(name),
-      ],
+    return GestureDetector(
+      onTap: () {
+        Clipboard.setData(
+            ClipboardData(text: 'Theme.of(context).colorScheme.$name'));
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('复制成功!')),
+        );
+      },
+      child: Row(
+        children: [
+          Container(
+            width: 26,
+            height: 26,
+            color: color,
+          ),
+          const SizedBox(width: 8),
+          Text(name),
+        ],
+      ),
     );
   }
 }
