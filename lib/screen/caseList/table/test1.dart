@@ -178,7 +178,7 @@ class _DataSource extends DataTableSource {
         },
         index: index,
         specificRowHeight: 43,
-        color: MaterialStateProperty.all(
+        color: WidgetStateProperty.all(
             index == selectedRowIndex ? Colors.yellow : Colors.white),
         cells: [
           DataCell(Center(child: Text('${item['department']}'))),

@@ -93,19 +93,19 @@ class CustomTableState extends State<CustomTable> {
                 // custom animation duration
                 datarowCheckboxTheme: CheckboxThemeData(
                   fillColor:
-                      MaterialStateProperty.all<Color>(Colors.transparent),
-                  checkColor: MaterialStateProperty.all<Color>(
+                      WidgetStateProperty.all<Color>(Colors.transparent),
+                  checkColor: WidgetStateProperty.all<Color>(
                       Theme.of(context).colorScheme.primary),
                   side: const BorderSide(color: Colors.transparent),
                 ),
 
                 headingCheckboxTheme: CheckboxThemeData(
                   fillColor:
-                      MaterialStateProperty.all<Color>(Colors.transparent),
+                      WidgetStateProperty.all<Color>(Colors.transparent),
                   checkColor:
-                      MaterialStateProperty.all<Color>(Colors.transparent),
+                      WidgetStateProperty.all<Color>(Colors.transparent),
                   overlayColor:
-                      MaterialStateProperty.all<Color>(Colors.transparent),
+                      WidgetStateProperty.all<Color>(Colors.transparent),
                   side: const BorderSide(color: Colors.transparent),
                 ),
 
@@ -113,7 +113,7 @@ class CustomTableState extends State<CustomTable> {
                 //隐藏默认分页器
                 hidePaginator: true,
                 columns: widget.columns ?? [],
-                headingRowColor: MaterialStateColor.resolveWith(
+                headingRowColor: WidgetStateColor.resolveWith(
                   (states) => Theme.of(context).colorScheme.inversePrimary,
                 ),
                 border: TableBorder.all(
@@ -166,7 +166,7 @@ class CustomPagerState extends State<CustomPager1> {
     // skip this build pass
     if (!widget.controller.isAttached) return const SizedBox();
     return Container(
-      color: Theme.of(context).colorScheme.background,
+      color: Theme.of(context).colorScheme.surface,
       width: MediaQuery.sizeOf(context).width,
       child: Wrap(
         spacing: 4,

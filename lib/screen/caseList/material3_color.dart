@@ -27,7 +27,7 @@ class Material3Color extends StatelessWidget {
                   name: 'Tertiary Container',
                   color: colorScheme.tertiaryContainer),
               ColorTile(name: 'Surface', color: colorScheme.surface),
-              ColorTile(name: 'Background', color: colorScheme.background),
+              ColorTile(name: 'Background', color: colorScheme.surface),
               ColorTile(name: 'Error', color: colorScheme.error),
               ColorTile(
                   name: 'Error Container', color: colorScheme.errorContainer),
@@ -47,13 +47,13 @@ class Material3Color extends StatelessWidget {
               ColorTile(
                   name: 'On Surface Variant',
                   color: colorScheme.onSurfaceVariant),
-              ColorTile(name: 'On Background', color: colorScheme.onBackground),
+              ColorTile(name: 'On Background', color: colorScheme.onSurface),
               ColorTile(name: 'On Error', color: colorScheme.onError),
               ColorTile(
                   name: 'On Error Container',
                   color: colorScheme.onErrorContainer),
               ColorTile(
-                  name: 'Surface Variant', color: colorScheme.surfaceVariant),
+                  name: 'Surface Variant', color: colorScheme.surfaceContainerHighest),
               ColorTile(name: 'Outline', color: colorScheme.outline),
               ColorTile(name: 'Shadow', color: colorScheme.shadow),
               ColorTile(
@@ -75,7 +75,7 @@ class ColorTile extends StatelessWidget {
   final String name;
   final Color color;
 
-  ColorTile({required this.name, required this.color});
+  const ColorTile({super.key, required this.name, required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +86,7 @@ class ColorTile extends StatelessWidget {
           height: 24,
           color: color,
         ),
-        SizedBox(width: 8),
+        const SizedBox(width: 8),
         Text(name),
       ],
     );

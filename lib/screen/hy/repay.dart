@@ -83,10 +83,10 @@ class Repay extends StatelessWidget {
                     )
                   ],
                 ),),
-                Expanded(child: Container(child: RichText(text: const TextSpan(children: [
+                Expanded(child: RichText(text: const TextSpan(children: [
                   TextSpan(text:"Effective period of interest reduction",style: TextStyle(color: Color(0xff683ef5))),
                   TextSpan(text:"23:59:59",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold))
-                ]),),)),
+                ]),)),
 
               ],)
             )

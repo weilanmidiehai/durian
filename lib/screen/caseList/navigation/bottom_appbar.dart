@@ -18,7 +18,7 @@ class _BottomAppBarDemoState extends State<BottomAppBarDemo> {
     });
   }
 
-  List _pages = []; // 底部导航栏各个可切换页面组
+  final List _pages = []; // 底部导航栏各个可切换页面组
 
   @override
   void initState() {
