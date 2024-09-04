@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'bezier_container.dart';
 import 'bezier_test1.dart';
 import 'bezier_test2.dart';
 import 'bezier_test3.dart';
@@ -42,6 +43,11 @@ class _BezierCurveState extends State<BezierCurve> {
                 Get.to(() => const BezierTest3());
               },
               child: const Text('一個底部導航欄樣式（半成品）')),
+          ElevatedButton(
+              onPressed: () {
+                Get.to(() => const BezierContainer());
+              },
+              child: const Text('贝塞尔边框（最终想要的效果）')),
         ],
       ),
     );
