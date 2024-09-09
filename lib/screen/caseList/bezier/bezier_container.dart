@@ -12,9 +12,10 @@ class _BezierContainerState extends State<BezierContainer> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(title: const Text('Bezier')),
-      body: SafeArea(
-        child: Container(
-          padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+      body: Container(
+        color: Colors.orange,
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: SafeArea(
           child: CustomPaint(
             size: Size(MediaQuery.sizeOf(context).width, 0),
             painter: Clipper(),
@@ -26,11 +27,11 @@ class _BezierContainerState extends State<BezierContainer> {
                     margin: const EdgeInsets.only(top: 10, bottom: 10),
                     alignment: Alignment.bottomCenter,
                     child: ClipOval(
-                      child: Image.network(
-                        'https://img2.baidu.com/it/u=1965355493,1942275847&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
-                        width: 50,
-                        height: 50,
-                      ),
+                      child: Image.asset('assets/image/dream.jpg',
+                          fit: BoxFit.cover,
+                          // 'https://img2.baidu.com/it/u=1965355493,1942275847&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+                          width: 50,
+                          height: 50),
                     ),
                   ),
                 ],
@@ -47,7 +48,7 @@ class Clipper extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Colors.green[100]! // 设置画笔颜色
+      ..color = Colors.white // 设置画笔颜色
       ..style = PaintingStyle.fill; // 绘制样式为填充
 
     var path = Path();

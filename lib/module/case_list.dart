@@ -22,11 +22,13 @@ class HomeList {
     HomeList(navigateScreen: '/GuideIndex', title: '新手引导'),
     HomeList(navigateScreen: '/TimePicker', title: '时间选择器'),
     HomeList(navigateScreen: '/DateSelection', title: '日期时间选择（弹窗）'),
-    HomeList(navigateScreen: '/RXProvider', title: '状态管理工具，less里面可以更新'),
+    HomeList(navigateScreen: '/StateManagement', title: '状态管理工具'),
     HomeList(navigateScreen: '/Carousel', title: '轮播图'),
     HomeList(navigateScreen: '/Table', title: '表格Table'),
     HomeList(navigateScreen: '/Navigation', title: '导航栏'),
     HomeList(navigateScreen: '/BezierCurve', title: '曲线绘制（贝塞尔曲线）'),
     HomeList(navigateScreen: '/Material3Color', title: 'Material3主题色彩'),
+    HomeList(navigateScreen: '/GestureDetector', title: '手勢識別'),
+    HomeList(navigateScreen: '/HTTP', title: 'HTTP请求'),
   ];
 }
