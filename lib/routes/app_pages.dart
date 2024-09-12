@@ -4,6 +4,7 @@ import '../screen/caseList/animations/index.dart';
 import '../screen/caseList/bezier/bezier_curve.dart';
 import '../screen/caseList/gesture_detector/gesture.dart';
 import '../screen/caseList/http/http.dart';
+import '../screen/caseList/icon/index.dart';
 import '../screen/caseList/material3_color.dart';
 import '../screen/caseList/navigation/bottom_appbar.dart';
 import '../screen/caseList/carousel/carousel.dart';
@@ -46,5 +47,6 @@ class AppPages {
     GetPage(name: '/Material3Color', page: () => const Material3Color()),
     GetPage(name: '/GestureDetector', page: () => const Gesture()),
     GetPage(name: '/HTTP', page: () => const HTTP()),
+    GetPage(name: '/Icon', page: () => const IconIndex()),
   ];
 }

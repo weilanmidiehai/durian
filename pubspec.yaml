@@ -32,6 +32,7 @@ dependencies:
   image_cropper: ^7.1.0
   dio: ^5.7.0
   web_socket_channel: ^3.0.1
+  flutter_svg: ^2.0.10+1
 
 
 dev_dependencies:

@@ -30,5 +30,6 @@ class HomeList {
     HomeList(navigateScreen: '/Material3Color', title: 'Material3主题色彩'),
     HomeList(navigateScreen: '/GestureDetector', title: '手勢識別'),
     HomeList(navigateScreen: '/HTTP', title: 'HTTP请求'),
+    HomeList(navigateScreen: '/Icon', title: 'Icon'),
   ];
 }
