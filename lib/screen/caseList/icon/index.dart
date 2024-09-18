@@ -13,8 +13,26 @@ class IconIndex extends StatelessWidget {
       body: const Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(children: [AAA(), AAA()]),
-          Row(children: [AAA(), AAA()]),
+          Row(children: [
+            CustomCard(
+                svgAsset: 'assets/add.svg',
+                serialNum: 'SC01',
+                text: '售賣類電子券\n查看及重新發送'),
+            CustomCard(
+                svgAsset: 'assets/add.svg',
+                serialNum: 'SC02',
+                text: '售賣類電子券\n查看及重新發送'),
+          ]),
+          Row(children: [
+            CustomCard(
+                svgAsset: 'assets/add.svg',
+                serialNum: 'SC02',
+                text: '售賣類電子券\n查看及重新發送'),
+            CustomCard(
+                svgAsset: 'assets/add.svg',
+                serialNum: 'SC02',
+                text: '售賣類電子券\n查看及重新發送'),
+          ]),
           SizedBox(height: 20),
           Row(children: [BBB(), SizedBox(width: 10), BBB()]),
           SizedBox(height: 10),
@@ -25,8 +43,16 @@ class IconIndex extends StatelessWidget {
   }
 }
 
-class AAA extends StatelessWidget {
-  const AAA({super.key});
+class CustomCard extends StatelessWidget {
+  const CustomCard(
+      {super.key,
+      required this.svgAsset,
+      required this.serialNum,
+      required this.text});
+
+  final String svgAsset;
+  final String serialNum;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -42,26 +68,22 @@ class AAA extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SvgPicture.asset(
-                  'assets/add.svg',
-                  semanticsLabel: '添加收藏',
+                  svgAsset,
                   height: 50,
                   width: 50,
                 ),
                 Container(
-                  width: 25, // 圆的宽度
-                  height: 25, // 圆的高度
-                  decoration: const BoxDecoration(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+                  decoration: BoxDecoration(
                     color: Colors.black12, // 圆的背景色
-                    shape: BoxShape.circle, // 将容器变为圆形
+                    borderRadius: BorderRadius.circular(100), // 圆角半径
                   ),
-                  child: const Center(
-                    child: Text(
-                      '1',
-                      style: TextStyle(
-                        color: Colors.white, // 文字颜色
-                        // fontSize: 50,         // 文字大小
-                        fontWeight: FontWeight.bold,
-                      ),
+                  child: Text(
+                    serialNum,
+                    style: const TextStyle(
+                      color: Colors.white, // 文字颜色
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -70,8 +92,10 @@ class AAA extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const Text('SC02-售賣類電子券'),
-            const Text('查看及重新發送')
+            Text(
+              text,
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       ),
