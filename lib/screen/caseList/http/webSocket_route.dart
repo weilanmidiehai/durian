@@ -13,7 +13,6 @@ class _WebSocketRouteState extends State<WebSocketRoute> {
   late IOWebSocketChannel channel;
   String _text = "";
 
-
   @override
   void initState() {
     super.initState();

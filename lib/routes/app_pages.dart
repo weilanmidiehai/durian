@@ -16,9 +16,9 @@ import '../screen/caseList/guide/guide_index.dart';
 import '../screen/caseList/img.dart';
 import '../screen/caseList/navigation/index.dart';
 import '../screen/caseList/pdf/pdf_view.dart';
+import '../screen/caseList/sliver_appbar/sliver_app_bar_page.dart';
 import '../screen/caseList/state_management/state_management.dart';
 import '../screen/caseList/table/table.dart';
-import '../screen/caseList/time_picker.dart';
 
 class AppPages {
   AppPages._();
@@ -36,7 +36,7 @@ class AppPages {
     GetPage(
         name: '/TransitionsHomePage', page: () => const TransitionsHomePage()),
     GetPage(name: '/GuideIndex', page: () => const GuideIndex()),
-    GetPage(name: '/TimePicker', page: () => const TimePicker()),
+    GetPage(name: '/SliverAppBar', page: () => const SliverAppBarPage()),
     GetPage(name: '/DateSelection', page: () => const DateSelection()),
     GetPage(name: '/StateManagement', page: () => const StateManagement()),
     GetPage(name: '/Carousel', page: () => Carousel()),

@@ -22,7 +22,7 @@ class CustomBtn extends StatelessWidget {
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
             ),
-            borderRadius: BorderRadius.circular(borderRadius ??26.w), // 圆角
+            borderRadius: BorderRadius.circular(borderRadius ?? 26.w), // 圆角
           ),
           padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
           child: child ?? Container(),

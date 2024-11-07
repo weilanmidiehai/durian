@@ -92,16 +92,14 @@ class CustomTableState extends State<CustomTable> {
                 sortArrowAnimationDuration: const Duration(milliseconds: 0),
                 // custom animation duration
                 datarowCheckboxTheme: CheckboxThemeData(
-                  fillColor:
-                      WidgetStateProperty.all<Color>(Colors.transparent),
+                  fillColor: WidgetStateProperty.all<Color>(Colors.transparent),
                   checkColor: WidgetStateProperty.all<Color>(
                       Theme.of(context).colorScheme.primary),
                   side: const BorderSide(color: Colors.transparent),
                 ),
 
                 headingCheckboxTheme: CheckboxThemeData(
-                  fillColor:
-                      WidgetStateProperty.all<Color>(Colors.transparent),
+                  fillColor: WidgetStateProperty.all<Color>(Colors.transparent),
                   checkColor:
                       WidgetStateProperty.all<Color>(Colors.transparent),
                   overlayColor:

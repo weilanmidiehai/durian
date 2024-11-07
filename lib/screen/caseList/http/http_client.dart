@@ -16,7 +16,8 @@ class _HttpTestRouteState extends State<HttpTestRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: const Text("网络请求")),
+    return Scaffold(
+      appBar: AppBar(title: const Text("网络请求")),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -44,7 +45,7 @@ class _HttpTestRouteState extends State<HttpTestRoute> {
       HttpClient httpClient = HttpClient();
       //打开Http连接
       HttpClientRequest request =
-      await httpClient.getUrl(Uri.parse("https://www.baidu.com"));
+          await httpClient.getUrl(Uri.parse("https://www.baidu.com"));
       //使用iPhone的UA
       request.headers.add(
         "user-agent",

@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 
 class BottomAppBarDemo extends StatefulWidget {
   const BottomAppBarDemo({super.key});
@@ -25,16 +23,15 @@ class _BottomAppBarDemoState extends State<BottomAppBarDemo> {
     super.initState();
 
     _pages
-      ..add( Container(
+      ..add(Container(
         color: Colors.yellow.shade100,
         alignment: Alignment.center,
         child: const Text(
           'Home',
           style: TextStyle(fontSize: 40),
         ),
-      )
-       )
-      ..add( Container(
+      ))
+      ..add(Container(
         color: Colors.purple.shade100,
         alignment: Alignment.center,
         child: const Text(
@@ -115,5 +112,3 @@ class _BottomAppBarDemoState extends State<BottomAppBarDemo> {
     );
   }
 }
-
-

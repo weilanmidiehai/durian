@@ -26,7 +26,7 @@ class _BezierTest1State extends State<BezierTest1> {
                   BoxShadow(
                     color: Colors.black, // 阴影颜色和透明度
                     spreadRadius: 5, // 阴影扩散半径
-                    blurRadius: 10,  // 模糊半径
+                    blurRadius: 10, // 模糊半径
                     offset: Offset(0, -5), // 阴影偏移量 (x, y)
                   ),
                 ],

@@ -46,9 +46,11 @@ class HTTP extends StatelessWidget {
                 child: const Text('Http分块下载（失败了，接口404）')),
             const Text(
                 'Http协议是无状态的，只能由客户端主动发起，服务端再被动响应，服务端无法向客户端主动推送内容，并且一旦服务器响应结束，链接就会断开(见注解部分)，所以无法进行实时通信。WebSocket协议正是为解决客户端与服务端实时通信而产生的技术，现在已经被主流浏览器支持，所以对于Web开发者来说应该比较熟悉了，Flutter也提供了专门的包来支持WebSocket协议。'),
-            ElevatedButton(onPressed: () {
-              Get.to(()=>const WebSocketRoute());
-            }, child: const Text('WebSocket协议'))
+            ElevatedButton(
+                onPressed: () {
+                  Get.to(() => const WebSocketRoute());
+                },
+                child: const Text('WebSocket协议'))
           ],
         ),
       ),

@@ -62,7 +62,10 @@ class _BezierCurveState extends State<BezierCurve> {
                   imageDialog(context,
                       image: Image.asset('assets/image/img_1.png'));
                 },
-                child: Image.asset('assets/image/img_1.png',height: 300,)),
+                child: Image.asset(
+                  'assets/image/img_1.png',
+                  height: 300,
+                )),
           ],
         ),
       ),

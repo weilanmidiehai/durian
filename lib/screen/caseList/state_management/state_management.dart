@@ -26,13 +26,15 @@ class StateManagement extends StatelessWidget {
               onPressed: () {
                 Get.to(() => const InheritedWidgetTestRoute());
               },
-              child: const Text("数据共享（InheritedWidget）")), ElevatedButton(
+              child: const Text("数据共享（InheritedWidget）")),
+          ElevatedButton(
               onPressed: () {
-                Get.to(() =>   const ProviderRoute());
+                Get.to(() => const ProviderRoute());
               },
-              child: const Text("跨组件状态共享（自实现Provider）")),ElevatedButton(
+              child: const Text("跨组件状态共享（自实现Provider）")),
+          ElevatedButton(
               onPressed: () {
-                Get.to(() =>   const ValueListenableRoute());
+                Get.to(() => const ValueListenableRoute());
               },
               child: const Text("按需rebuild（ValueListenableBuilder）")),
         ],

@@ -25,7 +25,8 @@ class HyIndex extends StatelessWidget {
               onPressed: () {
                 Get.to(() => Cash());
               },
-              child: const Text('cash 頁面')),  ElevatedButton(
+              child: const Text('cash 頁面')),
+          ElevatedButton(
               onPressed: () {
                 Get.to(() => const Repay());
               },

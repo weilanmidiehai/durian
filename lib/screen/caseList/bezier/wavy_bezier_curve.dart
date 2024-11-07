@@ -48,9 +48,8 @@ class BottomClipper extends CustomClipper<Path> {
 
     // 从左上角 (0, 0) 绘制直线到左下角 (0, size.height - 40)
     // 这里的 40 像素偏移表示底部距离视图底部的距离
-    path.lineTo(0, 0);//起点
+    path.lineTo(0, 0); //起点
     // 起点也可以用path.moveTo(0, 0) 将路径的起始点移动到左上角 (0, 0)
-
 
     path.lineTo(0, size.height - 40);
 
@@ -60,9 +59,11 @@ class BottomClipper extends CustomClipper<Path> {
     // 结束点在视图宽度的2.25分之一处（size.width / 2.25），
     // 高度向上偏移30像素（size.height - 30）
     path.quadraticBezierTo(
-        size.width / 4, size.height, // 控制点
-        size.width / 2.25, size.height - 30 // 结束点
-    );
+        size.width / 4,
+        size.height, // 控制点
+        size.width / 2.25,
+        size.height - 30 // 结束点
+        );
 
     // 绘制第二段贝塞尔曲线
     // 控制点在视图宽度的3/4处（size.width / 4 * 3），
@@ -70,9 +71,11 @@ class BottomClipper extends CustomClipper<Path> {
     // 结束点在视图的最右边（size.width），
     // 高度向上偏移40像素（size.height - 40）
     path.quadraticBezierTo(
-        size.width / 4 * 3, size.height - 90, // 控制点
-        size.width, size.height - 40 // 结束点
-    );
+        size.width / 4 * 3,
+        size.height - 90, // 控制点
+        size.width,
+        size.height - 40 // 结束点
+        );
 
     // 从结束点绘制直线到右下角 (size.width, size.height - 40)
     // 再绘制直线到右上角 (size.width, 0)

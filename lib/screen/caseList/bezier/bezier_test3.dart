@@ -60,13 +60,13 @@ class CustomBox extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment:CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 GestureDetector(
                   onTap: () => onIndexChanged(0),
                   child: Padding(
-                    padding:
-                        EdgeInsets.only(bottom: animalCenterIndex == 0 ? 50 : 10),
+                    padding: EdgeInsets.only(
+                        bottom: animalCenterIndex == 0 ? 50 : 10),
                     child: ClipOval(
                       child: Image.asset(
                         'assets/logo.png',
@@ -78,8 +78,8 @@ class CustomBox extends StatelessWidget {
                 GestureDetector(
                   onTap: () => onIndexChanged(1),
                   child: Padding(
-                    padding:
-                        EdgeInsets.only(bottom: animalCenterIndex == 1 ? 50 : 10),
+                    padding: EdgeInsets.only(
+                        bottom: animalCenterIndex == 1 ? 50 : 10),
                     child: ClipOval(
                       child: Image.asset(
                         'assets/logo.png',
@@ -91,8 +91,8 @@ class CustomBox extends StatelessWidget {
                 GestureDetector(
                   onTap: () => onIndexChanged(2),
                   child: Container(
-                    padding:
-                        EdgeInsets.only(bottom: animalCenterIndex == 2 ? 50 : 10),
+                    padding: EdgeInsets.only(
+                        bottom: animalCenterIndex == 2 ? 50 : 10),
                     child: ClipOval(
                       child: Image.asset(
                         'assets/logo.png',
@@ -112,7 +112,6 @@ class CustomBox extends StatelessWidget {
             painter: CurvePainter1(),
           ),
         ),
-
       ],
     );
   }
@@ -167,8 +166,6 @@ class CurvePainter extends CustomPainter {
 }
 
 class CurvePainter1 extends CustomPainter {
-
-
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint = Paint()
@@ -182,21 +179,21 @@ class CurvePainter1 extends CustomPainter {
     double controllerX = centerWidthOfOneX / 6;
 
     path.moveTo(0, 55);
-    path.lineTo(marginLeftAndRight / 2 , 55);
+    path.lineTo(marginLeftAndRight / 2, 55);
     path.cubicTo(
       marginLeftAndRight,
       55,
-      centerWidthOfOneX - (centerWidthOfOneX - controllerX) / 2 ,
+      centerWidthOfOneX - (centerWidthOfOneX - controllerX) / 2,
       size.height / 3,
-      centerWidthOfOneX  ,
+      centerWidthOfOneX,
       size.height / 2.6,
     );
     path.cubicTo(
-      centerWidthOfOneX + (centerWidthOfOneX - controllerX) / 2  ,
+      centerWidthOfOneX + (centerWidthOfOneX - controllerX) / 2,
       size.height / 2.6,
-      widthOfOne - (marginLeftAndRight)  ,
+      widthOfOne - (marginLeftAndRight),
       55,
-      widthOfOne - marginLeftAndRight / 2  ,
+      widthOfOne - marginLeftAndRight / 2,
       55,
     );
     path.lineTo(size.width, 55);
@@ -210,4 +207,3 @@ class CurvePainter1 extends CustomPainter {
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => true;
 }
-

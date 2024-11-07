@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-    @override
+  @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
@@ -52,24 +52,24 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: MediaQuery.of(context).size.width < 640
           ? BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          unselectedItemColor: Colors.grey,
-          selectedItemColor: Theme.of(context).colorScheme.primary,
-          onTap: (int index) {
-            setState(() {
-              _selectedIndex = index;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.feed), label: 'Feed'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.favorite), label: 'Favorites'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: 'Settings')
-          ])
+              currentIndex: _selectedIndex,
+              unselectedItemColor: Colors.grey,
+              selectedItemColor: Theme.of(context).colorScheme.primary,
+              onTap: (int index) {
+                setState(() {
+                  _selectedIndex = index;
+                });
+              },
+              items: const [
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.home), label: 'Home'),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.feed), label: 'Feed'),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.favorite), label: 'Favorites'),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.settings), label: 'Settings')
+                ])
           : null,
       body: Row(
         mainAxisSize: MainAxisSize.max,
@@ -105,4 +105,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

@@ -7,7 +7,7 @@ import 'widget/custom_btn.dart';
 import 'widget/custom_row.dart';
 
 class MAX extends StatelessWidget {
-    MAX({super.key});
+  MAX({super.key});
 
   //图片列表
   final List<Map> imgList = [
@@ -138,15 +138,13 @@ class MAX extends StatelessWidget {
             ),
           ),
         ),
-
         SizedBox(
           width: 900,
           // height: 300,
           child: Swiper(
             autoplay: true,
             layout: SwiperLayout.CUSTOM,
-            customLayoutOption:
-            CustomLayoutOption(startIndex: 0, stateCount: 3)
+            customLayoutOption: CustomLayoutOption(startIndex: 0, stateCount: 3)
               ..addScale([
                 0.7,
                 1.0,

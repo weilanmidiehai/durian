@@ -91,8 +91,7 @@ class Cash extends StatelessWidget {
                             Text(
                               'Period',
                               style: TextStyle(
-                                  fontSize: 30.sp, fontWeight: FontWeight.bold
-                                  ),
+                                  fontSize: 30.sp, fontWeight: FontWeight.bold),
                             ),
                             const BorderText(
                               text: '01',

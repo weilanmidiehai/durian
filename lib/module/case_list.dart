@@ -20,7 +20,7 @@ class HomeList {
     HomeList(navigateScreen: '/FlipCard', title: '翻转卡片'),
     HomeList(navigateScreen: '/TransitionsHomePage', title: '动画组件'),
     HomeList(navigateScreen: '/GuideIndex', title: '新手引导'),
-    HomeList(navigateScreen: '/TimePicker', title: '时间选择器'),
+    HomeList(navigateScreen: '/SliverAppBar', title: 'SliverAppBar樣式'),
     HomeList(navigateScreen: '/DateSelection', title: '日期时间选择（弹窗）'),
     HomeList(navigateScreen: '/StateManagement', title: '状态管理工具'),
     HomeList(navigateScreen: '/Carousel', title: '轮播图'),

@@ -78,7 +78,7 @@ class _GestureState extends State<Gesture> {
                       //手指按下时会触发此回调
                       onPanDown: (DragDownDetails e) {
                         //打印手指按下的位置(相对于屏幕)
-                       debugPrint("用户手指按下：${e.globalPosition}");
+                        debugPrint("用户手指按下：${e.globalPosition}");
                       },
                       //手指滑动时会触发此回调
                       onPanUpdate: (DragUpdateDetails e) {
@@ -97,22 +97,22 @@ class _GestureState extends State<Gesture> {
                 ],
               ),
             ),
-            const Text('单一方向拖动,GestureDetector可以只识别特定方向的手势事件，将上面的例子改为只能沿水平方向拖动：'),
+            const Text(
+                '单一方向拖动,GestureDetector可以只识别特定方向的手势事件，将上面的例子改为只能沿水平方向拖动：'),
             Container(
               margin: const EdgeInsets.symmetric(vertical: 10),
               color: Colors.lime[100],
               height: 40,
-              child:
-              Stack(
+              child: Stack(
                 children: <Widget>[
                   Positioned(
-                    left: _left1,  // 使用 left 来控制水平位置
+                    left: _left1, // 使用 left 来控制水平位置
                     child: GestureDetector(
                       child: const CircleAvatar(child: Text("B")),
                       // 水平方向拖动事件
                       onHorizontalDragUpdate: (DragUpdateDetails details) {
                         setState(() {
-                          _left1 += details.delta.dx;  // 水平移动
+                          _left1 += details.delta.dx; // 水平移动
                         });
                       },
                     ),
@@ -121,25 +121,27 @@ class _GestureState extends State<Gesture> {
               ),
             ),
             const Text('GestureDetector可以监听缩放事件，下面演示了一个简单的图片缩放效果：'),
-            Container(margin: const EdgeInsets.symmetric(vertical: 10),
-            child: Row(
-              children: [
-                GestureDetector(
-                  //指定宽度，高度自适应
-                  child: Image.asset("assets/lily.png", width: _imageWidth),
-                  onScaleUpdate: (ScaleUpdateDetails details) {
-                    setState(() {
-                      //缩放倍数在0.8到10倍之间
-                      _imageWidth=200*details.scale.clamp(.8, 10.0);
-                    });
-                  },
-                ),
-              ],
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              child: Row(
+                children: [
+                  GestureDetector(
+                    //指定宽度，高度自适应
+                    child: Image.asset("assets/lily.png", width: _imageWidth),
+                    onScaleUpdate: (ScaleUpdateDetails details) {
+                      setState(() {
+                        //缩放倍数在0.8到10倍之间
+                        _imageWidth = 200 * details.scale.clamp(.8, 10.0);
+                      });
+                    },
+                  ),
+                ],
+              ),
             ),
-            ),
-            const Text('要给一段富文本（RichText）的不同部分分别添加点击事件处理器，但是TextSpan并不是一个widget，这时我们不能用GestureDetector，但TextSpan有一个recognizer属性，它可以接收一个GestureRecognizer。')
-,
-            Container(margin: const EdgeInsets.symmetric(vertical: 10),
+            const Text(
+                '要给一段富文本（RichText）的不同部分分别添加点击事件处理器，但是TextSpan并不是一个widget，这时我们不能用GestureDetector，但TextSpan有一个recognizer属性，它可以接收一个GestureRecognizer。'),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 10),
               child: Center(
                 child: Text.rich(
                   TextSpan(
@@ -163,7 +165,6 @@ class _GestureState extends State<Gesture> {
                   ),
                 ),
               ),
-
             )
           ],
         ),

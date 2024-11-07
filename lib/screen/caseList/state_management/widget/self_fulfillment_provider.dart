@@ -52,8 +52,8 @@ class _ProviderRouteState extends State<ProviderRoute> {
                 //   return Text("总价: ${cart.totalPrice}");
                 // }),
                 Consumer<CartModel>(
-                    builder: (context, cart)=> Text("总价: ${cart!.totalPrice}")
-                ),
+                    builder: (context, cart) =>
+                        Text("总价: ${cart!.totalPrice}")),
 
                 Builder(builder: (context) {
                   debugPrint("ElevatedButton build"); //在后面优化部分会用到
@@ -64,7 +64,8 @@ class _ProviderRouteState extends State<ProviderRoute> {
                       // ChangeNotifierProvider.of<CartModel>(context)
                       //     .add(Item(20.0, 1));
                       // listen 设为false，不建立依赖关系
-                      ChangeNotifierProvider.of<CartModel>(context, listen: false)
+                      ChangeNotifierProvider.of<CartModel>(context,
+                              listen: false)
                           .add(Item(20.0, 1));
                     },
                   );
@@ -77,7 +78,6 @@ class _ProviderRouteState extends State<ProviderRoute> {
     );
   }
 }
-
 
 // 一个通用的InheritedWidget，保存需要跨组件共享的状态
 class InheritedProvider<T> extends InheritedWidget {
@@ -144,8 +144,9 @@ class ChangeNotifierProvider<T extends ChangeNotifier> extends StatefulWidget {
     // final type = _typeOf<InheritedProvider<T>>();
     final provider = listen
         ? context.dependOnInheritedWidgetOfExactType<InheritedProvider<T>>()
-        : context.getElementForInheritedWidgetOfExactType<InheritedProvider<T>>()?.widget
-    as InheritedProvider<T>;
+        : context
+            .getElementForInheritedWidgetOfExactType<InheritedProvider<T>>()
+            ?.widget as InheritedProvider<T>;
     return provider!.data;
   }
 
