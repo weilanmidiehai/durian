@@ -59,7 +59,7 @@ class _WebSocketRouteState extends State<WebSocketRoute> {
       floatingActionButton: FloatingActionButton(
         onPressed: _sendMessage,
         tooltip: 'Send message',
-        child: Icon(Icons.send),
+        child: const Icon(Icons.send),
       ),
     );
   }

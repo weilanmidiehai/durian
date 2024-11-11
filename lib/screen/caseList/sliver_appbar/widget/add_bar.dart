@@ -23,6 +23,7 @@ class _AddBarState extends State<AddBar> {
                 handle:
                     NestedScrollView.sliverOverlapAbsorberHandleFor(context),
                 sliver: SliverAppBar(
+                  backgroundColor: const Color(0xffc6d1ea),
                   leading: IconButton(
                       icon: const Icon(Icons.arrow_back),
                       color: Colors.white,

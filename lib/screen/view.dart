@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                   onTap: () {
                     logic.setMultiple();
                   },
-                )
+                ),
               ],
             ),
             drawer: HomeDrawer(logic: logic),
@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
                         return ListViewStyle(
                           listData: item,
                           callBack: () {
-                            Get.toNamed('${item.navigateScreen}');
+                            Get.toNamed(item.navigateScreen);
                           },
                         );
                       },

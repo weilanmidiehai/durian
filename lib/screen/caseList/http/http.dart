@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'dio.dart';
 import 'download_with_chunks.dart';
 import 'http_client.dart';
-import 'webSocket_route.dart';
+import 'web_socket_route.dart';
 
 class HTTP extends StatelessWidget {
   const HTTP({super.key});

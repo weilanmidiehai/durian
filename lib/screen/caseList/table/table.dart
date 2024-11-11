@@ -3,16 +3,15 @@ import 'package:get/get.dart';
 
 import 'test1.dart';
 
-class Table extends StatelessWidget {
-  const Table({super.key});
+class TablePage extends StatelessWidget {
+  const TablePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('Table')),
+        appBar: AppBar(title: const Text('TablePage')),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
                 onPressed: () {
