@@ -81,25 +81,15 @@ class _RootPageState extends State<BottomNavigationPage> {
         // 设置被选中时的图标颜色
         unselectedItemColor: Colors.grey,
         // 设置未被选中时的图标颜色
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-            ),
-            label: '组件',
-          ),
+              icon: const Icon(Icons.home), label: 'home'.tr),
           BottomNavigationBarItem(
-            icon: Icon(Icons.event_note),
-            label: '数据',
-          ),
+              icon: const Icon(Icons.flutter_dash), label: 'hy'.tr),
+          const BottomNavigationBarItem(
+              icon: Icon(Icons.account_box_outlined), label: '通讯录'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_box_outlined),
-            label: '通讯录',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: '我的',
-          ),
+              icon: const Icon(Icons.person), label: 'account'.tr),
         ],
 
         currentIndex: _selectedIndex,

@@ -29,9 +29,7 @@ class RouteConfig {
   static final List<RouteItem> routes = [
     RouteItem(route: '/', page: () => const SplashScreen(), title: '欢迎页'),
     RouteItem(
-        route: '/FanChart',
-        page: () => FanChart(),
-        title: '图形（饼图）\n插件：fl_chart'),
+        route: '/FanChart', page: () => FanChart(), title: '数据图\n插件：fl_chart'),
     RouteItem(
         route: '/PdfView',
         page: () => const PdfView(),
@@ -41,8 +39,15 @@ class RouteConfig {
         page: () => const GmailVerificationCode(),
         title: '邮件发送\n smtp_server'),
     RouteItem(
-        route: '/Img', page: () => const Img(), title: '图片选择\n image_picker'),
-    RouteItem(route: '/FlipCard', page: () => const FlipCard(), title: '翻转卡片'),
+      route: '/Img',
+      page: () => const Img(),
+      title: '图片选择\n image_picker',
+    ),
+    RouteItem(
+      route: '/FlipCard',
+      page: () => const FlipCard(),
+      title: '翻转卡片',
+    ),
     RouteItem(
         route: '/TransitionsHomePage',
         page: () => const TransitionsHomePage(),
@@ -61,8 +66,16 @@ class RouteConfig {
         route: '/StateManagement',
         page: () => const StateManagement(),
         title: '状态管理工具'),
-    RouteItem(route: '/Carousel', page: () => Carousel(), title: '轮播图'),
-    RouteItem(route: '/Table', page: () => const TablePage(), title: '表格Table'),
+    RouteItem(
+      route: '/Carousel',
+      page: () => Carousel(),
+      title: '轮播图',
+    ),
+    RouteItem(
+      route: '/Table',
+      page: () => const TablePage(),
+      title: '表格Table',
+    ),
     RouteItem(
         route: '/Navigation',
         page: () => const NavigationIndex(),
@@ -80,9 +93,20 @@ class RouteConfig {
         page: () => const Material3Color(),
         title: 'Material3主题色彩'),
     RouteItem(
-        route: '/GestureDetector', page: () => const Gesture(), title: '手勢識別'),
-    RouteItem(route: '/HTTP', page: () => const HTTP(), title: 'HTTP请求'),
-    RouteItem(route: '/Icon', page: () => const IconIndex(), title: 'Icon'),
+      route: '/GestureDetector',
+      page: () => const Gesture(),
+      title: '手勢識別',
+    ),
+    RouteItem(
+      route: '/HTTP',
+      page: () => const HTTP(),
+      title: 'HTTP请求',
+    ),
+    RouteItem(
+      route: '/Icon',
+      page: () => const IconIndex(),
+      title: 'Icon',
+    ),
     RouteItem(
         route: '/GaussianBlur',
         page: () => const GaussianBlur(),

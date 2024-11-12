@@ -19,9 +19,7 @@ class HomePage extends StatelessWidget {
         builder: (controller) {
           return Scaffold(
             appBar: AppBar(
-              title: const Text(
-                'Du',
-              ),
+              title: Text('home'.tr),
               actions: [
                 InkWell(
                   child: Padding(

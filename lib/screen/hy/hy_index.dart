@@ -12,7 +12,7 @@ class HyIndex extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Hy Index'),
+        title: Text('hy'.tr),
       ),
       body: Column(
         children: [

@@ -31,9 +31,8 @@ class MyApp extends StatelessWidget {
           getPages: AppPages.routes,
 
           translations: AppTranslations(),
-          locale: Locale('en', 'US'),
-          // 默认语言
-          fallbackLocale: Locale('en', 'US'), // 备用语言
+          locale: const Locale('en', 'US'), // 默认语言
+          fallbackLocale: const Locale('en', 'US'), // 备用语言
         );
       },
     );

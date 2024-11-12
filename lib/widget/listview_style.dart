@@ -32,7 +32,7 @@ class ListViewStyle extends StatelessWidget {
                 fit: BoxFit.fill, // 完全填充
               ),
             ),
-            child: Center(
+            child: SingleChildScrollView(
               child: Text(
                 '${listData?.title}',
                 textAlign: TextAlign.center,

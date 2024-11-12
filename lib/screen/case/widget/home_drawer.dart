@@ -16,30 +16,22 @@ class HomeDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
-            child: Center(
-              child: ClipOval(
-                child: Image.asset(
-                  "assets/logo.png",
-                  width: 100,
-                  height: 100,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
+              child: Center(
+                  child: ClipOval(
+                      child: Image.asset("assets/logo.png",
+                          width: 100, height: 100, fit: BoxFit.cover)))),
           ListTile(
-            title: const Text('Home'),
+            title: Text('Home'.tr),
+            leading: const Icon(Icons.home),
             selected: logic.selectedIndex == 0,
             onTap: () {
-              // Update the state of the app
               logic.onItemTapped(0);
-              // Then close the drawer
               Get.back();
             },
           ),
           ListTile(
-            title: Text(context.isDarkMode ? '切换白天模式' : '切换夜晚模式'),
-            // Icon(Get.isDarkMode ? Icons.sunny :Icons.nightlight),
+            title: Text('changesTheme'.tr),
+            leading: Icon(Get.isDarkMode ? Icons.sunny : Icons.nightlight),
             selected: logic.selectedIndex == 1,
             onTap: () {
               context.isDarkMode
@@ -51,17 +43,19 @@ class HomeDrawer extends StatelessWidget {
           ),
           ListTile(
             title: Text("language".tr),
+            leading: const Icon(Icons.language),
             selected: logic.selectedIndex == 2,
             onTap: () {
               logic.onItemTapped(2);
-              // Get.back();
-
               // 切换语言
               if (Get.locale == const Locale('en', 'US')) {
                 Get.updateLocale(const Locale('zh', 'CN'));
               } else {
                 Get.updateLocale(const Locale('en', 'US'));
               }
+              // Get.reset(); // 重置 GetX 的状态
+              // Get.offAllNamed('/'); // 返回到根路由
+              // Get.offAll(() => SplashScreen()); // 返回到应用的主入口
             },
           ),
         ],
