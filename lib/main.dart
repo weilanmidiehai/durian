@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'routes/app_pages.dart';
+import 'translations/app_translations.dart';
 import 'util/app_theme.dart';
 
 void main() {
@@ -28,6 +29,11 @@ class MyApp extends StatelessWidget {
           // home:  const SplashScreen(),
           initialRoute: AppPages.initial,
           getPages: AppPages.routes,
+
+          translations: AppTranslations(),
+          locale: Locale('en', 'US'),
+          // 默认语言
+          fallbackLocale: Locale('en', 'US'), // 备用语言
         );
       },
     );

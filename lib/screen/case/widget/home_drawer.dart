@@ -50,11 +50,18 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('School'),
+            title: Text("language".tr),
             selected: logic.selectedIndex == 2,
             onTap: () {
               logic.onItemTapped(2);
-              Get.back();
+              // Get.back();
+
+              // 切换语言
+              if (Get.locale == const Locale('en', 'US')) {
+                Get.updateLocale(const Locale('zh', 'CN'));
+              } else {
+                Get.updateLocale(const Locale('en', 'US'));
+              }
             },
           ),
         ],

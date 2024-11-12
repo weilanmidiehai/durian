@@ -21,6 +21,7 @@ import '../screen/caseList/pdf/pdf_view.dart';
 import '../screen/caseList/sliver_appbar/sliver_app_bar_page.dart';
 import '../screen/caseList/state_management/state_management.dart';
 import '../screen/caseList/table/table.dart';
+import '../translations/translations.dart';
 
 class RouteConfig {
   static const initial = '/';
@@ -90,6 +91,10 @@ class RouteConfig {
         route: '/InputChip',
         page: () => const InputChipPage(),
         title: 'InputChip'),
+    RouteItem(
+        route: '/Translations',
+        page: () => const Translations(),
+        title: '全局翻译Translations'),
   ];
 }
 
