@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../util/app_theme.dart';
-import '../logic.dart';
+import '../../util/app_theme.dart';
+import 'home_controller.dart';
 
 class HomeDrawer extends StatelessWidget {
   const HomeDrawer({super.key, required this.logic});
 
-  final HomeLogic logic;
+  final HomeController logic;
 
   @override
   Widget build(BuildContext context) {

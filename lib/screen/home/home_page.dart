@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../module/case_list.dart';
-import '../widget/listview_style.dart';
-import 'caseList/show_webview.dart';
-import 'case/logic.dart';
-import 'case/widget/home_drawer.dart';
+import '../../module/case_list.dart';
+import '../../widget/listview_style.dart';
+import '../caseList/show_webview.dart';
+
+import 'home_drawer.dart';
+import 'home_controller.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
-
-  final logic = Get.put(HomeLogic());
+  final controller = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<HomeLogic>(
-        init: logic,
-        builder: (controller) {
+    return GetBuilder<HomeController>(
+        init: controller,
+        global: true,
+        builder: ((controller) {
           return Scaffold(
             appBar: AppBar(
               title: Text('home'.tr),
@@ -25,30 +26,31 @@ class HomePage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(10),
                     child: Icon(
-                      logic.multiple.value
+                      controller.multiple.value
                           ? Icons.dashboard
                           : Icons.view_agenda,
                     ),
                   ),
                   onTap: () {
-                    logic.setMultiple();
+                    controller.setMultiple();
                   },
                 ),
               ],
             ),
-            drawer: HomeDrawer(logic: logic),
+            drawer: HomeDrawer(logic: controller),
             body: Column(
               children: [
                 InkWell(
                     onTap: () {
                       Get.to(const WebViewExample());
                     },
-                    child: HomeLogic.widgetOptions[logic.selectedIndex]),
+                    child:
+                        HomeController.widgetOptions[controller.selectedIndex]),
                 Expanded(
                   child: GridView(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: logic.multiple.value ? 4 : 2,
+                        crossAxisCount: controller.multiple.value ? 4 : 2,
                         //横轴三个子widget
                         childAspectRatio: 2.0, //宽高比为1时，子widget
                         mainAxisSpacing: 10, //主轴空隙间距
@@ -58,12 +60,22 @@ class HomePage extends StatelessWidget {
                       HomeList.homeList.length,
                       (int index) {
                         final item = HomeList.homeList[index];
+                        final int count = HomeList.homeList.length;
+
+                        final Animation<double> animation =
+                            Tween<double>(begin: 0.0, end: 1.0).animate(
+                                CurvedAnimation(
+                                    parent: controller.animationController!,
+                                    curve: Interval((1 / count) * index, 1.0,
+                                        curve: Curves.fastOutSlowIn)));
+                        controller.animationController?.forward();
                         return ListViewStyle(
-                          listData: item,
-                          callBack: () {
-                            Get.toNamed(item.navigateScreen);
-                          },
-                        );
+                            listData: item,
+                            animation: animation,
+                            animationController: controller.animationController,
+                            callBack: () {
+                              Get.toNamed(item.navigateScreen);
+                            });
                       },
                     ),
                   ),
@@ -71,6 +83,6 @@ class HomePage extends StatelessWidget {
               ],
             ),
           );
-        });
+        }));
   }
 }

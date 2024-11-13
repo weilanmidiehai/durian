@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomeLogic extends GetxController {
+class HomeController extends GetxController
+    with GetSingleTickerProviderStateMixin {
   int selectedIndex = 0;
+
   //多样的列表
   RxBool multiple = RxBool(true);
+
+  AnimationController? animationController;
+
   static const List<Widget> widgetOptions = <Widget>[
-    Text(
-      '抽屉选中的：Index 0: Home',
-    ),
-    Text(
-      '抽屉选中的：Index 1: Business',
-    ),
-    Text(
-      '抽屉选中的：Index 2: School',
-    ),
+    Text('抽屉选中的：Index 0: Home'),
+    Text('抽屉选中的：Index 1: Business'),
+    Text('抽屉选中的：Index 2: School')
   ];
 
   void onItemTapped(int index) {
@@ -28,6 +27,14 @@ class HomeLogic extends GetxController {
   }
 
   @override
+  void onInit() {
+    // TODO: implement onInit
+    super.onInit();
+    animationController = AnimationController(
+        duration: const Duration(milliseconds: 2000), vsync: this);
+  }
+
+  @override
   void onReady() {
     // TODO: implement onReady
     super.onReady();
@@ -35,7 +42,7 @@ class HomeLogic extends GetxController {
 
   @override
   void onClose() {
-    // TODO: implement onClose
+    animationController?.dispose();
     super.onClose();
   }
 }

@@ -3,9 +3,9 @@ import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 import 'screen/caseList/carousel/carousel.dart';
+import 'screen/home/home_page.dart';
 import 'screen/hy/hy_index.dart';
 import 'screen/my.dart';
-import 'screen/view.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
