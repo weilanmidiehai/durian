@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../navigation_page.dart';
 import '../screen/caseList/animations/index.dart';
 import '../screen/caseList/bezier/bezier_curve.dart';
+import '../screen/caseList/drag_and_drop_sort.dart';
 import '../screen/caseList/gaussian/gaussian_blur.dart';
 import '../screen/caseList/gesture_detector/gesture.dart';
 import '../screen/caseList/http/http.dart';
@@ -119,6 +120,10 @@ class RouteConfig {
         route: '/Translations',
         page: () => const Translations(),
         title: '全局翻译Translations'),
+    RouteItem(
+        route: '/DragAndDropSort',
+        page: () => const DragAndDropSort(),
+        title: '拖拽排序'),
   ];
 }
 

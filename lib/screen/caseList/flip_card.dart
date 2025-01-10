@@ -65,41 +65,31 @@ class _FlipCardState extends State<FlipCard>
             height: 220,
             margin: const EdgeInsets.all(10),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(15),
-              child: Container(
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        'assets/image/1.png',
-                      ),
-                      fit: BoxFit.fill, // 完全填充
-                    ),
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Container(
-                        padding: const EdgeInsets.only(right: 15, top: 15),
-                        child: const Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(
-                              '11',
-                              style: TextStyle(
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                              textAlign: TextAlign.end,
-                            ),
-                          ],
+                borderRadius: BorderRadius.circular(15),
+                child: Container(
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                          'assets/image/1.png',
                         ),
+                        fit: BoxFit.fill, // 完全填充
                       ),
-                    ],
-                  )),
-            ),
+                    ),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                              alignment: Alignment.center,
+                              child: const Text(
+                                '我是正面',
+                                style: TextStyle(
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green),
+                              ))
+                        ]))),
           ),
           Positioned(
             right: 0,
